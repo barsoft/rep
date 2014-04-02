@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lab3</name>
+    </assembly>
+    <members>
+        <member name="F:Lab3.AboutBox1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Lab3.AboutBox1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Lab3.AboutBox1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Lab3.Form1">
+            <summary>
+            Form1 part 2
+            </summary>
+        </member>
+        <member name="F:Lab3.Form1.instances">
+            <summary>
+            Instances array
+            </summary>
+        </member>
+        <member name="F:Lab3.Form1.instancesOnSample">
+            <summary>
+            Instances on sample array
+            </summary>
+        </member>
+        <member name="F:Lab3.Form1.samples">
+            <summary>
+            Samples  array
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.#ctor">
+            <summary>
+            Game form constructor
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.StartGame">
+            <summary>
+            Starts game session
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.EndGame">
+            <summary>
+            Ends game session
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.SaveHistory">
+            <summary>
+            Saves last score to history file
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.UpdateStates">
+            <summary>
+            Updates instances and score states
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.GoDown">
+            <summary>
+            Puts card to the end of stack
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.UpdateStack">
+            <summary>
+            Updates card stack
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            timer tick eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.toolStripGoDownButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            toolStrip go down button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.startToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu start button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.exitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu exit button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.restartToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu restart button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.goDownToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu go down button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.rulesToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu rules button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.historyToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu history button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.aboutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            menu about button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.playButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            play button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.rulesButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            rules button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.historyButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            history button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Lab3.Form1.exitButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            exit button eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Lab3.Form1.components">
+            <summary>
+            Требуется переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:Lab3.Form1.Dispose(System.Boolean)">
+            <summary>
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:Lab3.Form1.InitializeComponent">
+            <summary>
+            Обязательный метод для поддержки конструктора - не изменяйте
+            содержимое данного метода при помощи редактора кода.
+            </summary>
+        </member>
+        <member name="F:Lab3.Form1.toolStrip1">
+            <summary>
+            Tool strip
+            </summary>
+        </member>
+        <member name="F:Lab3.Form1.score">
+            <summary>
+            Score tools strip label
+            </summary>
+        </member>
+        <member name="P:Lab3.Form1.StackX">
+            <summary>
+            Card stack x position
+            </summary>
+        </member>
+        <member name="P:Lab3.Form1.StackY">
+            <summary>
+            Card stack y position
+            </summary>
+        </member>
+        <member name="P:Lab3.Form1.StackIntervalX">
+            <summary>
+            Card stack interval x value
+            </summary>
+        </member>
+        <member name="P:Lab3.Form1.StackIntervalY">
+            <summary>
+            Card stack interval y value
+            </summary>
+        </member>
+        <member name="T:Lab3.HistoryForm">
+            <summary>
+            History form
+            </summary>
+        </member>
+        <member name="M:Lab3.HistoryForm.#ctor">
+            <summary>
+            History form constructor
+            </summary>
+        </member>
+        <member name="M:Lab3.HistoryForm.LoadHistory">
+            <summary>
+            Load history from file
+            </summary>
+        </member>
+        <member name="F:Lab3.HistoryForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Lab3.HistoryForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Lab3.HistoryForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Lab3.History">
+            <summary>
+            History class
+            </summary>
+        </member>
+        <member name="M:Lab3.Program.Main">
+            <summary>
+            Главная точка входа для приложения.
+            </summary>
+        </member>
+        <member name="T:Lab3.RulesForm">
+            <summary>
+            Rules form
+            </summary>
+        </member>
+        <member name="M:Lab3.RulesForm.#ctor">
+            <summary>
+            Rules form constructor
+            </summary>
+        </member>
+        <member name="M:Lab3.RulesForm.LoadRules">
+            <summary>
+            Loading rules file
+            </summary>
+        </member>
+        <member name="F:Lab3.RulesForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Lab3.RulesForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Lab3.RulesForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Lab3.Sample">
+            <summary>
+            Sample card type, card where we drag
+            </summary>
+        </member>
+        <member name="T:Lab3.Card">
+            <summary>
+            Card class
+            </summary>
+        </member>
+        <member name="M:Lab3.Card.#ctor(System.Drawing.Bitmap,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Card class constructor
+            </summary>
+            <param name="sampleBitmap"></param>
+            <param name="signFileName"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Lab3.Sample.#ctor(System.Drawing.Bitmap,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Sample constructor
+            </summary>
+            <param name="sampleBitmap"></param>
+            <param name="signFileName"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="name"></param>
+        </member>
+        <member name="T:Lab3.Instance">
+            <summary>
+            Instance card type, card which we drag
+            </summary>
+        </member>
+        <member name="M:Lab3.Instance.#ctor(System.Drawing.Bitmap,System.String,System.Int32,System.Int32,System.String,Lab3.Form1)">
+            <summary>
+            Instance constructor
+            </summary>
+            <param name="sampleBitmap"></param>
+            <param name="signFileName"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="name"></param>
+            <param name="form1"></param>
+        </member>
+        <member name="P:Lab3.Instance.Selected">
+            <summary>
+            Indicates if instance is selected
+            </summary>
+        </member>
+        <member name="T:Lab3.WellDoneForm">
+            <summary>
+            Well done form
+            </summary>
+        </member>
+        <member name="M:Lab3.WellDoneForm.#ctor">
+            <summary>
+            Well done form constructor
+            </summary>
+        </member>
+        <member name="M:Lab3.WellDoneForm.buttonok_Click(System.Object,System.EventArgs)">
+            <summary>
+            button ok welldone form eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Lab3.WellDoneForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Lab3.WellDoneForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Lab3.WellDoneForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Lab3.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Lab3.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Lab3.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

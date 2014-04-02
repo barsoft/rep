@@ -1,0 +1,5 @@
+Your string: asdasdasddad3a3da 
+Copied 5  characters 
+New string (using user function): asdas 
+New string (using standard function): asdas 
+ 
