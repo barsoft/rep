@@ -1,0 +1,7 @@
+1,Headphones
+2,Laptops
+3,Cellphones
+4,Cameras
+5,Tablets
+6,Screens
+7,Printers

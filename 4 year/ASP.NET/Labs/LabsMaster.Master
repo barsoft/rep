@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LabsMaster.Master.cs" Inherits="Labs.LabsMaster" %>
+
+<%@ Register TagPrefix="barsoft" TagName="HeaderControl" Src="~/HeaderControl.ascx" %>
+
+<!DOCTYPE html>
+
+    
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Goods.com</title>
+    <link rel="stylesheet" href="~/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #BEC2C0;">
+    <form id="form1" runat="server" style="background-color: #999999; margin-left: auto; margin-right: auto; width: 1000px;">
+      
+        <barsoft:HeaderControl ID="HeaderControl" runat="server" />
+        <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 30px; padding-top: 5px;">
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="simple-table" style="width: auto;">
+            <p style="text-align: center; font-size: medium;">М.Присяжный, 2013г.</p>
+            <asp:ContentPlaceHolder ID="footer" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
