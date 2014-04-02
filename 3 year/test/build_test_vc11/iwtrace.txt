@@ -1,0 +1,427 @@
+-- START TRACE TO FILE --
+tracing to: ''
+MarmaladeSDK v6.3.1 [345893] (S3E Loader v4.36.0)
+Copyright (C) 2001-2011 Ideaworks3D Ltd
+System Info:
+ OS           : WINDOWS (3)
+ OS Version   : Windows 6.1 (6.1)
+ Device ID    : Windows Simulator (0x1)
+ Device Class : WINDOWS_GENERIC (3000)
+ Phone Number : 0044123456789
+ Unique ID    : SIMULATOR_ID
+ Device Name  : My Computer
+ Memory       : 1048576KiB
+12/07/13 03:57:13.151: [0x1aac] DEVICE: Initialising FIBRE
+12/07/13 03:57:13.151: [0x1aac] DEVICE: Initialising THREAD
+12/07/13 03:57:13.152: [0x1aac] THREAD: s3eThreadCreateMain
+12/07/13 03:57:13.152: [0xfa0] DEVICE: Initialising SURFACE
+12/07/13 03:57:13.152: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+12/07/13 03:57:13.153: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+12/07/13 03:57:13.153: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+12/07/13 03:57:13.153: [0xfa0] SURFACE: done s3eSurfaceInit: 800x600 p:1600 (800x600 p:1600) o:0
+12/07/13 03:57:13.154: [0xfa0] DEVICE: Initialising EXT
+12/07/13 03:57:13.154: [0xfa0] EXT: registering extension: s3eLibrary [0xe6dd6ce5]
+12/07/13 03:57:13.155: [0xfa0] EXT: registering extension: s3eExtLoadLibaray [0xf23d6d85]
+12/07/13 03:57:13.155: [0xfa0] EXT: registering extension: s3eCamera [0xa3e23039]
+12/07/13 03:57:13.155: [0xfa0] EXT: registering extension: s3eWindow [0xd31aa8a8]
+12/07/13 03:57:13.156: [0xfa0] EXT: registering extension: s3eVFS [0x17f48c9f]
+12/07/13 03:57:13.156: [0xfa0] EXT: registering extension: s3eContacts [0x5e39d2af]
+12/07/13 03:57:13.156: [0xfa0] EXT: registering extension: s3eSoundRecord [0x579dbf78]
+12/07/13 03:57:13.157: [0xfa0] EXT: registering extension: s3eTouchpad [0x1dbd7ce8]
+12/07/13 03:57:13.157: [0xfa0] EXT: registering extension: s3eDebugHeap [0xc667a795]
+12/07/13 03:57:13.157: [0xfa0] EXT: registering extension: s3eExtDebugHeap [0xff96de46]
+12/07/13 03:57:13.158: [0xfa0] EXT: registering extension: s3eClipboard [0xd68f3420]
+12/07/13 03:57:13.158: [0xfa0] EXT: registering extension: s3eOSExec [0xc121bcf7]
+12/07/13 03:57:13.159: [0xfa0] EXT: registering extension: s3eExtOSExec [0x20380948]
+12/07/13 03:57:13.159: [0xfa0] EXT: registering extension: s3eEval [0x167d1038]
+12/07/13 03:57:13.159: [0xfa0] EXT: registering extension: s3eExtEval [0xf0421449]
+12/07/13 03:57:13.159: [0xfa0] EXT: registering extension: s3eHighResTimer [0x41f2dedb]
+12/07/13 03:57:13.160: [0xfa0] EXT: registering extension: s3eOSReadString [0x9fe3ea45]
+12/07/13 03:57:13.160: [0xfa0] EXT: registering extension: s3eCameraCapture [0xd36aceed]
+12/07/13 03:57:13.161: [0xfa0] EXT: registering extension: s3eTestEmulatorConfig [0x4a0d0a4f]
+12/07/13 03:57:13.161: [0xfa0] EXT: registering extension: s3eThread [0xcc0b4a28]
+12/07/13 03:57:13.161: [0xfa0] EXT: registering extension: s3eCompass [0x40d632c6]
+12/07/13 03:57:13.162: [0xfa0] EXT: registering extension: Compass [0xd3653f1b]
+12/07/13 03:57:13.162: [0xfa0] EXT: registering extension: s3eSocketOpt [0x09cdcdec]
+12/07/13 03:57:13.162: [0xfa0] EXT: registering extension: s3eExtSocketOpt [0x42fd049d]
+12/07/13 03:57:13.163: [0xfa0] EXT: registering extension: s3eImagePicker [0xd2fc1d51]
+12/07/13 03:57:13.163: [0xfa0] EXT: registering extension: s3eTest [0x168503f0]
+12/07/13 03:57:13.163: [0xfa0] EXT: registering extension: s3eSMS [0x17f480c3]
+12/07/13 03:57:13.164: [0xfa0] EXT: registering extension: s3eMetrics [0x2bc8e047]
+12/07/13 03:57:13.164: [0xfa0] EXT: registering extension: Metrics [0xbe57ec9c]
+12/07/13 03:57:13.164: [0xfa0] EXT: registering extension: s3eLocation [0x91944229]
+12/07/13 03:57:13.165: [0xfa0] EXT: registering extension: Location [0x7604d91e]
+12/07/13 03:57:13.165: [0xfa0] EXT: registering extension: Win32Surface [0x909755c1]
+12/07/13 03:57:13.165: [0xfa0] EXT: registering extension: Win32UIProcessMessage [0x48f2a5ba]
+12/07/13 03:57:13.166: [0xfa0] EXT: registering extension: Win32DataDirChange [0xbfcfc057]
+12/07/13 03:57:13.166: [0xfa0] DEVICE: Initialising CONFIG
+12/07/13 03:57:13.166: [0xfa0] DEVICE: Initialising TIMER
+12/07/13 03:57:13.167: [0xfa0] DEVICE: Initialising COMPRESSION
+12/07/13 03:57:13.167: [0xfa0] DEVICE: DeviceInit done: services=0x0a216148
+12/07/13 03:57:13.168: [0xfa0] EXT: s3eExtGetHash: 0xd31aa8a8 [0x00000000 size=0]
+12/07/13 03:57:13.168: [0xfa0] EXT: initializing extension: s3eWindow
+12/07/13 03:57:13.168: [0xfa0] EXT: initializing extension: s3eWindow 0x100ccc70
+12/07/13 03:57:13.169: [0xfa0] DEVICE: SetupPaths: NULL
+12/07/13 03:57:13.169: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via"]
+12/07/13 03:57:13.169: [0xfa0] LOADER: setting [commandline]  via=c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.170: [0xfa0] LOADER: parsing via file: c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.170: [0xfa0] FILE: s3eFileOpen('c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via', 'r') succeeded, id=269579440 p=0x101174b0
+12/07/13 03:57:13.170: [0xfa0] LOADER: reading 913 bytes from via files
+12/07/13 03:57:13.171: [0xfa0] FILE: s3eFileClose h=0x101174b0
+12/07/13 03:57:13.171: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via" --dll="c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86"
+--data="c:\Users\maks\Documents\test\da
+12/07/13 03:57:13.171: [0xfa0] LOADER: setting [commandline]  via=c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.172: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86
+12/07/13 03:57:13.172: [0xfa0] LOADER: setting [commandline]  data=c:\Users\maks\Documents\test\data
+12/07/13 03:57:13.172: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+12/07/13 03:57:13.173: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/maks/Documents/test/data/app.icf
+12/07/13 03:57:13.173: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/maks/Documents/test/data/app.config.txt
+12/07/13 03:57:13.173: [0xfa0] LOADER: setting [commandline]  config-txt2=d:/marmalade/6.3/modules/iw2d/docs/iw2d.config.txt
+12/07/13 03:57:13.174: [0xfa0] LOADER: setting [commandline]  config-txt3=d:/marmalade/6.3/modules/iwgeom/docs/iwgeom.config.txt
+12/07/13 03:57:13.174: [0xfa0] LOADER: setting [commandline]  config-txt4=d:/marmalade/6.3/modules/iwgl/docs/iwgl.config.txt
+12/07/13 03:57:13.174: [0xfa0] LOADER: setting [commandline]  config-txt5=d:/marmalade/6.3/modules/iwgx/docs/iwgx.config.txt
+12/07/13 03:57:13.175: [0xfa0] LOADER: setting [commandline]  config-txt6=d:/marmalade/6.3/modules/iwgxfont/docs/iwgxfont.config.txt
+12/07/13 03:57:13.175: [0xfa0] LOADER: setting [commandline]  config-txt7=d:/marmalade/6.3/modules/iwresmanager/docs/iwresmanager.config.txt
+12/07/13 03:57:13.175: [0xfa0] LOADER: setting [commandline]  config-txt8=d:/marmalade/6.3/modules/iwutil/docs/iwutil.config.txt
+12/07/13 03:57:13.176: [0xfa0] LOADER: setting [commandline]  config-txt9=d:/marmalade/6.3/s3e/s3e.config.txt
+12/07/13 03:57:13.176: [0xfa0] LOADER: setting [commandline]  config-txt10=d:/marmalade/6.3/s3e\s3e.config.txt
+12/07/13 03:57:13.177: [0xfa0] LOADER: setting [commandline]  s3e-dir=d:/marmalade/6.3/s3e
+12/07/13 03:57:13.177: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+12/07/13 03:57:13.178: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\maks\Documents\test\data'
+12/07/13 03:57:13.178: [0xfa0] FILE: fs[03]: system[raw://] ''
+12/07/13 03:57:13.178: [0xfa0] FILE: listed 2 active filesystems
+12/07/13 03:57:13.179: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+12/07/13 03:57:13.179: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\maks\Documents\test\data'
+12/07/13 03:57:13.179: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\maks\Documents\test\data-ram'
+12/07/13 03:57:13.179: [0xfa0] FILE: fs[03]: system[raw://] ''
+12/07/13 03:57:13.180: [0xfa0] FILE: listed 3 active filesystems
+12/07/13 03:57:13.186: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+12/07/13 03:57:13.186: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+12/07/13 03:57:13.186: [0xfa0] LOADER: Using data directory c:\Users\maks\Documents\test\data as ROM drive
+12/07/13 03:57:13.187: [0xfa0] LOADER: Using directory c:\Users\maks\Documents\test\data-ram as RAM drive
+12/07/13 03:57:13.187: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/maks/Documents/test/data/app.config.txt', 'r') succeeded, id=1000 p=0x10118b2c
+12/07/13 03:57:13.187: [0xfa0] FILE: s3eFileClose h=0x10118b2c
+12/07/13 03:57:13.188: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iw2d/docs/iw2d.config.txt', 'r') succeeded, id=1001 p=0x10118c48
+12/07/13 03:57:13.188: [0xfa0] FILE: s3eFileClose h=0x10118c48
+12/07/13 03:57:13.189: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwgeom/docs/iwgeom.config.txt', 'r') succeeded, id=1002 p=0x10118d64
+12/07/13 03:57:13.189: [0xfa0] FILE: s3eFileClose h=0x10118d64
+12/07/13 03:57:13.189: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwgl/docs/iwgl.config.txt', 'r') succeeded, id=1003 p=0x10118e80
+12/07/13 03:57:13.190: [0xfa0] FILE: s3eFileClose h=0x10118e80
+12/07/13 03:57:13.190: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwgx/docs/iwgx.config.txt', 'r') succeeded, id=1004 p=0x10118f9c
+12/07/13 03:57:13.191: [0xfa0] FILE: s3eFileClose h=0x10118f9c
+12/07/13 03:57:13.192: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwgxfont/docs/iwgxfont.config.txt', 'r') succeeded, id=1005 p=0x101190b8
+12/07/13 03:57:13.192: [0xfa0] FILE: s3eFileClose h=0x101190b8
+12/07/13 03:57:13.192: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwresmanager/docs/iwresmanager.config.txt', 'r') succeeded, id=1006 p=0x101191d4
+12/07/13 03:57:13.193: [0xfa0] FILE: s3eFileClose h=0x101191d4
+12/07/13 03:57:13.193: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/modules/iwutil/docs/iwutil.config.txt', 'r') succeeded, id=1007 p=0x101192f0
+12/07/13 03:57:13.194: [0xfa0] FILE: s3eFileClose h=0x101192f0
+12/07/13 03:57:13.194: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/s3e/s3e.config.txt', 'r') succeeded, id=1008 p=0x1011940c
+12/07/13 03:57:13.201: [0xfa0] FILE: s3eFileClose h=0x1011940c
+12/07/13 03:57:13.202: [0xfa0] FILE: s3eFileOpen('raw://d:/marmalade/6.3/s3e\s3e.config.txt', 'r') succeeded, id=1009 p=0x10119528
+12/07/13 03:57:13.209: [0xfa0] FILE: s3eFileClose h=0x10119528
+12/07/13 03:57:13.210: [0xfa0] FILE: s3eFileOpen('raw://d:\marmalade\6.3\s3e/s3e.icf', 'rb') succeeded, id=1010 p=0x10119644
+12/07/13 03:57:13.210: [0xfa0] LOADER: Loading config from: d:\marmalade\6.3\s3e/s3e.icf
+12/07/13 03:57:13.211: [0xfa0] FILE: s3eFileClose h=0x10119644
+12/07/13 03:57:13.212: [0xfa0] LOADER: Loading app-icf from command line specified location c:/Users/maks/Documents/test/data/app.icf
+12/07/13 03:57:13.212: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/maks/Documents/test/data/app.icf', 'rb') succeeded, id=1011 p=0x10119760
+12/07/13 03:57:13.212: [0xfa0] LOADER: Loading config from: raw://c:/Users/maks/Documents/test/data/app.icf
+12/07/13 03:57:13.213: [0xfa0] FILE: s3eFileClose h=0x10119760
+12/07/13 03:57:13.213: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via"]
+12/07/13 03:57:13.213: [0xfa0] LOADER: setting [commandline]  via=c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.213: [0xfa0] LOADER: parsing via file: c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.214: [0xfa0] FILE: s3eFileOpen('c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via', 'r') succeeded, id=1012 p=0x1011987c
+12/07/13 03:57:13.214: [0xfa0] LOADER: reading 913 bytes from via files
+12/07/13 03:57:13.214: [0xfa0] FILE: s3eFileClose h=0x1011987c
+12/07/13 03:57:13.214: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via" --dll="c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86"
+--data="c:\Users\maks\Documents\test\da
+12/07/13 03:57:13.215: [0xfa0] LOADER: setting [commandline]  via=c:\Users\maks\Documents\test\build_test_vc11\test_vc11_debug.via
+12/07/13 03:57:13.215: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86
+12/07/13 03:57:13.215: [0xfa0] LOADER: setting [commandline]  data=c:\Users\maks\Documents\test\data
+12/07/13 03:57:13.215: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+12/07/13 03:57:13.216: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/maks/Documents/test/data/app.icf
+12/07/13 03:57:13.216: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/maks/Documents/test/data/app.config.txt
+12/07/13 03:57:13.216: [0xfa0] LOADER: setting [commandline]  config-txt2=d:/marmalade/6.3/modules/iw2d/docs/iw2d.config.txt
+12/07/13 03:57:13.216: [0xfa0] LOADER: setting [commandline]  config-txt3=d:/marmalade/6.3/modules/iwgeom/docs/iwgeom.config.txt
+12/07/13 03:57:13.217: [0xfa0] LOADER: setting [commandline]  config-txt4=d:/marmalade/6.3/modules/iwgl/docs/iwgl.config.txt
+12/07/13 03:57:13.217: [0xfa0] LOADER: setting [commandline]  config-txt5=d:/marmalade/6.3/modules/iwgx/docs/iwgx.config.txt
+12/07/13 03:57:13.217: [0xfa0] LOADER: setting [commandline]  config-txt6=d:/marmalade/6.3/modules/iwgxfont/docs/iwgxfont.config.txt
+12/07/13 03:57:13.217: [0xfa0] LOADER: setting [commandline]  config-txt7=d:/marmalade/6.3/modules/iwresmanager/docs/iwresmanager.config.txt
+12/07/13 03:57:13.218: [0xfa0] LOADER: setting [commandline]  config-txt8=d:/marmalade/6.3/modules/iwutil/docs/iwutil.config.txt
+12/07/13 03:57:13.218: [0xfa0] LOADER: setting [commandline]  config-txt9=d:/marmalade/6.3/s3e/s3e.config.txt
+12/07/13 03:57:13.218: [0xfa0] LOADER: setting [commandline]  config-txt10=d:/marmalade/6.3/s3e\s3e.config.txt
+12/07/13 03:57:13.218: [0xfa0] LOADER: setting [commandline]  s3e-dir=d:/marmalade/6.3/s3e
+12/07/13 03:57:13.218: [0xfa0] LOADER: s3eExecMemoryCheck: Memory free: 1048576K
+12/07/13 03:57:13.219: [0xfa0] FILE: s3eFileOpen('raw://C:\Users\maks\AppData\Local\Temp\\_marm_temp_test_', 'w') succeeded, id=1013 p=0x10119998
+12/07/13 03:57:13.219: [0xfa0] FILE: s3eFileClose h=0x10119998
+12/07/13 03:57:13.220: [0xfa0] FILE: new filesystem: drive=4 type=0 ro=0 name=tmp://
+12/07/13 03:57:13.220: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\maks\Documents\test\data'
+12/07/13 03:57:13.221: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\maks\Documents\test\data-ram'
+12/07/13 03:57:13.221: [0xfa0] FILE: fs[03]: system[raw://] ''
+12/07/13 03:57:13.221: [0xfa0] FILE: fs[04]: system[tmp://] 'C:\Users\maks\AppData\Local\Temp\'
+12/07/13 03:57:13.221: [0xfa0] FILE: listed 4 active filesystems
+12/07/13 03:57:13.239: [0xfa0] SURFACE: Fixed Screen Orientation: 2
+12/07/13 03:57:13.239: [0xfa0] SURFACE: Numbers in parameter DispFixRot are deprecated! (DispFixRot=2)
+12/07/13 03:57:13.239: [0xfa0] SURFACE: scaling=1
+12/07/13 03:57:13.313: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+12/07/13 03:57:13.313: [0xfa0] SURFACE: s3eSurfaceSetup: does not match native type (requested=RGB565 native=RGB565)
+12/07/13 03:57:13.317: [0xfa0] SURFACE: resorting to generic copyup for RGB565 -> RGB888 (blit dir 3)
+12/07/13 03:57:13.366: [0xfa0] EXT: Registering user-supplied extensions
+12/07/13 03:57:13.367: [0xfa0] FIBRE: stack switch : enabled
+12/07/13 03:57:13.367: [0xfa0] FIBRE: fast switch  : disabled
+12/07/13 03:57:13.367: [0xfa0] FIBRE: global lock  : enabled
+12/07/13 03:57:13.368: [0xfa0] FIBRE: fast lock    : disabled
+12/07/13 03:57:13.368: [0xfa0] FIBRE: thunks       : enabled
+12/07/13 03:57:13.368: [0xfa0] LOADER: Calling s3eDeviceInit()
+12/07/13 03:57:13.369: [0xfa0] DEVICE: DeviceInit: services=0xfffdffff [0xe5dc9eb7]
+12/07/13 03:57:13.369: [0xfa0] DEVICE: Initialising CALLBACKS
+12/07/13 03:57:13.369: [0xfa0] DEVICE: Initialising CRYPTO
+12/07/13 03:57:13.369: [0xfa0] DEVICE: Initialising ERROR
+12/07/13 03:57:13.370: [0xfa0] DEVICE: Initialising SOCKET
+12/07/13 03:57:13.371: [0xfa0] DEVICE: Initialising STORAGE
+12/07/13 03:57:13.371: [0xfa0] DEVICE: Initialising VIBRA
+12/07/13 03:57:13.371: [0xfa0] DEVICE: Initialising KEYBOARD
+12/07/13 03:57:13.373: [0xfa0] DEVICE: Initialising POINTER
+12/07/13 03:57:13.374: [0xfa0] DEVICE: Initialising ACCELEROMETER
+12/07/13 03:57:13.374: [0xfa0] ACCELEROMETER: damping=0 scaling=0
+12/07/13 03:57:13.374: [0xfa0] DEVICE: Initialising SOUND
+12/07/13 03:57:13.438: [0xfa0] SOUND: stereo sound enabled
+12/07/13 03:57:13.439: [0xfa0] SOUND: s3eSoundStop: started=0
+12/07/13 03:57:13.440: [0xfa0] SOUND: SetMasterVolume: 255 -> 256
+12/07/13 03:57:13.440: [0xfa0] DEVICE: Initialising AUDIO
+12/07/13 03:57:13.440: [0xfa0] AUDIO: Number of channels = 16
+12/07/13 03:57:13.441: [0xfa0] DEVICE: Initialising VIDEO
+12/07/13 03:57:13.441: [0xfa0] DEVICE: Initialising LICENSE
+12/07/13 03:57:13.442: [0xfa0] DEVICE: Initialising GL
+12/07/13 03:57:13.442: [0xfa0] DEVICE: DeviceInit done: services=0xfffdffff
+12/07/13 03:57:13.458: [0xfa0] SPLASH: displaying debug splash-screen
+12/07/13 03:57:13.480: [0x1068] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+12/07/13 03:57:13.480: [0x1068] SURFACE: s3eSurfaceSetup: does not match native type (requested=RGB565 native=RGB565)
+12/07/13 03:57:13.496: [0xfa0] SPLASH: No splash screen specified
+12/07/13 03:57:13.561: [0xfa0] TOUCHPAD: Found touchpad size 0 0
+12/07/13 03:57:13.561: [0xfa0] LOADER: s3eExecInit Done
+12/07/13 03:57:13.564: [0xfa0] LOADER: found initial S3E file: raw://c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86
+12/07/13 03:57:13.564: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86 [root=NULL 0x00000000 0x00000000]
+12/07/13 03:57:13.564: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86
+12/07/13 03:57:13.565: [0xfa0] LOADER: s3eExecDoExecuteLoop
+12/07/13 03:57:13.609: [0xfa0] LOADER: AppVersion: 4 36
+12/07/13 03:57:13.610: [0xfa0] LOADER: S3E Version    : 4.36.0
+12/07/13 03:57:13.610: [0xfa0] LOADER: Arch           : X86
+12/07/13 03:57:13.610: [0xfa0] LOADER: VFP            : 1
+12/07/13 03:57:13.611: [0xfa0] LOADER: App S3E Version: 4.36.0
+12/07/13 03:57:13.611: [0xfa0] LOADER: App arch       : X86
+12/07/13 03:57:13.611: [0xfa0] LOADER: App VFP        : 0
+12/07/13 03:57:13.612: [0xfa0] LOADER: new s3eExecHandle = 0x01ac4c60
+12/07/13 03:57:15.468: [0xfa0] LOADER: Calling s3eDeviceInit(S3E_DEVICE_INIT_MEMORY)
+12/07/13 03:57:15.469: [0xfa0] DEVICE: DeviceInit: services=0x00020000 [0x00020000]
+12/07/13 03:57:15.469: [0xfa0] DEVICE: Initialising MEMORY
+12/07/13 03:57:15.471: [0xfa0] MEMORY: Loader heap size=30000
+12/07/13 03:57:15.517: [0xfa0] MEMORY: Initialised heap 0 [0x0b251b64-0x0fca6c64] size=77943040
+12/07/13 03:57:15.518: [0xfa0] MEMORY: Initialised heap 7 [0x006e1464-0x006edc64] size=51200
+12/07/13 03:57:15.518: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x00223628 0x00223868 0x00223340
+12/07/13 03:57:15.518: [0xfa0] DEVICE: DeviceInit done: services=0x00020000
+12/07/13 03:57:15.519: [0xfa0] LOADER: IwS3EGetEntryPoint -> 0x0680085d
+12/07/13 03:57:15.519: [0xfa0] LOADER: Executing S3E 0x01ac4c60 [c:\Users\maks\Documents\test\build_test_vc11\Debug_test_VC11_x86\test.s86] entry=0x0680085d
+12/07/13 03:57:15.520: [0xfa0] EXT: s3eExtGetHash: 0xcc0b4a28 [0x0a22d9b0 size=76]
+12/07/13 03:57:15.521: [0xfa0] EXT: initializing extension: s3eThread
+12/07/13 03:57:15.521: [0xfa0] EXT: initializing extension: s3eThread 0x10072ba0
+12/07/13 03:57:15.521: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x068011a4 0x068011b8 0x067f916b
+12/07/13 03:57:15.522: [0xfa0] EXT: s3eExtGetHash: 0x2bc8e047 [0x0a22d770 size=72]
+12/07/13 03:57:15.523: [0xfa0] EXT: initializing extension: s3eMetrics
+12/07/13 03:57:15.523: [0xfa0] EXT: s3eExtGetHash: 0xc667a795 [0x0a25c650 size=8]
+12/07/13 03:57:15.523: [0xfa0] EXT: initializing extension: s3eDebugHeap
+12/07/13 03:57:15.524: [0xfa0] MEMORY: s3eExtDebugHeapAlloc: 77943040 bytes allocated for system debug heap
+12/07/13 03:57:15.528: [0xfa0] UTIL: IwCallStackInit
+12/07/13 03:57:15.529: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+12/07/13 03:57:15.530: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+12/07/13 03:57:15.530: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+12/07/13 03:57:15.531: [0xfa0] GX: IwGxSetScreenOrient: 1
+12/07/13 03:57:15.531: [0xfa0] GX: IwGxSetScreenOrient [0 x 0] orient=1
+12/07/13 03:57:15.547: [0xfa0] IW_GL: EGL: eglGetDisplay returned 0FF93140
+12/07/13 03:57:15.587: [0xfa0] IW_GL: eglInitialise succeeded - version 1.4
+12/07/13 03:57:15.588: [0xfa0] IW_GL: S3E_EGL_VERSION: 0104
+12/07/13 03:57:15.588: [0xfa0] IW_GL: S3E_GL_VERSION: 0200
+12/07/13 03:57:15.589: [0xfa0] IW_GL: EGL_VENDOR: Google Inc.
+12/07/13 03:57:15.589: [0xfa0] IW_GL: EGL_VERSION: 1.4 (ANGLE 1.0.0.1275)
+12/07/13 03:57:15.589: [0xfa0] IW_GL:     EGL_EXT_create_context_robustness
+12/07/13 03:57:15.590: [0xfa0] IW_GL:     EGL_ANGLE_d3d_share_handle_client_buffer
+12/07/13 03:57:15.590: [0xfa0] IW_GL:     EGL_ANGLE_query_surface_pointer
+12/07/13 03:57:15.590: [0xfa0] IW_GL:     EGL_ANGLE_surface_d3d_texture_2d_share_handle
+12/07/13 03:57:15.591: [0xfa0] IW_GL:     EGL_NV_post_sub_buffer
+12/07/13 03:57:15.591: [0xfa0] GL_CORE: rejecting config 0: EGL_DEPTH_SIZE < 16
+12/07/13 03:57:15.592: [0xfa0] GL_CORE: rejecting config 4: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.592: [0xfa0] GL_CORE: rejecting config 5: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.592: [0xfa0] GL_CORE: rejecting config 6: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.593: [0xfa0] GL_CORE: rejecting config 7: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.593: [0xfa0] GL_CORE: rejecting config 8: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.593: [0xfa0] GL_CORE: rejecting config 9: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.594: [0xfa0] GL_CORE: rejecting config 10: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.594: [0xfa0] GL_CORE: rejecting config 11: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+12/07/13 03:57:15.594: [0xfa0] GL_CORE: EGL: Chose EGL_CONFIG_ID 3
+12/07/13 03:57:15.615: [0xfa0] IW_GL: GL_VENDOR: Google Inc.
+12/07/13 03:57:15.616: [0xfa0] IW_GL: GL_RENDERER: ANGLE (NVIDIA GeForce GTS 450)
+12/07/13 03:57:15.616: [0xfa0] IW_GL: GL_VERSION: OpenGL ES 2.0 (ANGLE 1.0.0.1275)
+12/07/13 03:57:15.616: [0xfa0] IW_GL: GL properties reported by driver:
+12/07/13 03:57:15.617: [0xfa0] IW_GL:     GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: 20
+12/07/13 03:57:15.617: [0xfa0] IW_GL:     GL_SHADER_COMPILER: 1
+12/07/13 03:57:15.617: [0xfa0] IW_GL:     GL_MAX_VERTEX_ATTRIBS: 16
+12/07/13 03:57:15.618: [0xfa0] IW_GL:     GL_MAX_VERTEX_UNIFORM_VECTORS: 254
+12/07/13 03:57:15.618: [0xfa0] IW_GL:     GL_MAX_VARYING_VECTORS: 10
+12/07/13 03:57:15.618: [0xfa0] IW_GL:     GL_MAX_TEXTURE_IMAGE_UNITS: 16
+12/07/13 03:57:15.619: [0xfa0] IW_GL:     GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS: 4
+12/07/13 03:57:15.619: [0xfa0] IW_GL:     GL_MAX_FRAGMENT_UNIFORM_VECTORS: 221
+12/07/13 03:57:15.619: [0xfa0] IW_GL:     GL_MAX_CUBE_MAP_TEXTURE_SIZE: 8192
+12/07/13 03:57:15.620: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_FORMAT: GL_RGB
+12/07/13 03:57:15.620: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_TYPE: GL_UNSIGNED_SHORT_5_6_5
+12/07/13 03:57:15.620: [0xfa0] IW_GL:     GL_MAX_RENDERBUFFER_SIZE: 8192
+12/07/13 03:57:15.621: [0xfa0] IW_GL:     GL_POINT_SIZE_MAX: -1
+12/07/13 03:57:15.621: [0xfa0] IW_GL:     GL_MAX_TEXTURE_SIZE: 8192
+12/07/13 03:57:15.621: [0xfa0] IW_GL:     GL_MAX_VIEWPORT_DIMS: (8192, 8192)
+12/07/13 03:57:15.622: [0xfa0] IW_GL: Supported GL_EXTENSIONS:
+12/07/13 03:57:15.622: [0xfa0] IW_GL:     GL_OES_packed_depth_stencil
+12/07/13 03:57:15.623: [0xfa0] IW_GL:     GL_OES_element_index_uint
+12/07/13 03:57:15.623: [0xfa0] IW_GL:     GL_OES_texture_half_float_linear
+12/07/13 03:57:15.623: [0xfa0] IW_GL:     GL_NV_fence
+12/07/13 03:57:15.624: [0xfa0] IW_GL:     GL_EXT_read_format_bgra
+12/07/13 03:57:15.624: [0xfa0] IW_GL:     GL_OES_get_program_binary
+12/07/13 03:57:15.624: [0xfa0] IW_GL:     GL_OES_rgb8_rgba8
+12/07/13 03:57:15.625: [0xfa0] IW_GL:     GL_EXT_texture_compression_dxt1
+12/07/13 03:57:15.625: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt3
+12/07/13 03:57:15.625: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt5
+12/07/13 03:57:15.626: [0xfa0] IW_GL:     GL_ARB_texture_env_combine
+12/07/13 03:57:15.626: [0xfa0] IW_GL:     GL_OES_texture_npot
+12/07/13 03:57:15.626: [0xfa0] IW_GL:     GL_EXT_texture_format_BGRA8888
+12/07/13 03:57:15.627: [0xfa0] IW_GL:     GL_OES_texture_half_float
+12/07/13 03:57:15.627: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_multisample
+12/07/13 03:57:15.627: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_blit
+12/07/13 03:57:15.628: [0xfa0] IW_GL:     GL_OES_standard_derivatives
+12/07/13 03:57:15.628: [0xfa0] IW_GL:     GL_OES_texture_float
+12/07/13 03:57:15.628: [0xfa0] IW_GL:     GL_OES_texture_float_linear
+12/07/13 03:57:15.629: [0xfa0] IW_GL:     GL_EXT_texture_filter_anisotropic
+12/07/13 03:57:15.629: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+12/07/13 03:57:15.629: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+12/07/13 03:57:15.629: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+12/07/13 03:57:15.655: [0xfa0] GX: Parsing GL driver strings
+12/07/13 03:57:15.657: [0xfa0] FILE: s3eFileOpen('resource_cache/cachedSize.bin', 'rb') succeeded, id=1014 p=0x10119ab4
+12/07/13 03:57:15.658: [0xfa0] FILE: s3eFileClose h=0x10119ab4
+12/07/13 03:57:15.658: [0xfa0] UTIL: Added class factory for CIwGxShaderTechnique (hash 0x62ab11c4)
+12/07/13 03:57:15.658: [0xfa0] UTIL: Added class factory for CIwGxCubeMap (hash 0x5474a064)
+12/07/13 03:57:15.659: [0xfa0] FILE: s3eFileClose h=0x10119bd0
+12/07/13 03:57:15.660: [0xfa0] EXT: s3eExtGetHash: 0x167d1038 [0x0a22d750 size=8]
+12/07/13 03:57:15.660: [0xfa0] EXT: initializing extension: s3eEval
+12/07/13 03:57:15.661: [0xfa0] FILE: s3eFileClose h=0x10119cec
+12/07/13 03:57:15.662: [0xfa0] UTIL: Added class factory for CIwResTemplateImage (hash 0x4d5ab6b1)
+12/07/13 03:57:15.662: [0xfa0] UTIL: Added class factory for CIwResTemplateMTL (hash 0x3a22b5bb)
+12/07/13 03:57:15.662: [0xfa0] UTIL: Added class factory for CIwResTemplateGROUP (hash 0x4d3980fb)
+12/07/13 03:57:15.663: [0xfa0] UTIL: Added class factory for CIwMaterial (hash 0x2544f997)
+12/07/13 03:57:15.663: [0xfa0] UTIL: Added class factory for CIwResGroup (hash 0xf446397f)
+12/07/13 03:57:15.663: [0xfa0] UTIL: Added class factory for CIwTexture (hash 0x3521f539)
+12/07/13 03:57:15.664: [0xfa0] UTIL: Added class factory for CIwResBuildStyle (hash 0xa59f2593)
+12/07/13 03:57:15.664: [0xfa0] RESMANAGER: Added serialise block for ResGroupMembers
+12/07/13 03:57:15.664: [0xfa0] RESMANAGER: Added serialise block for ResGroupBuildData
+12/07/13 03:57:15.665: [0xfa0] RESMANAGER: Added serialise block for ResGroupChildPaths
+12/07/13 03:57:15.665: [0xfa0] RESMANAGER: Added serialise block for ResGroupHST
+12/07/13 03:57:15.665: [0xfa0] RESMANAGER: Added serialise block for ResGroupDirectory
+12/07/13 03:57:15.666: [0xfa0] RESMANAGER: Added serialise block for ResGroupResources
+12/07/13 03:57:15.666: [0xfa0] RESMANAGER: Added serialise block for ResGroupResourcesOptimised
+12/07/13 03:57:15.666: [0xfa0] RESMANAGER: Setting build style to 'gles1'
+12/07/13 03:57:15.667: [0xfa0] UTIL: Added class factory for CIwGxFont (hash 0xa68776be)
+12/07/13 03:57:15.667: [0xfa0] UTIL: Added class factory for CIwGxFontTTFont (hash 0xc084661d)
+12/07/13 03:57:15.668: [0xfa0] UTIL: Added class factory for CIwResTemplateGXFONT (hash 0xf4d12aa4)
+12/07/13 03:57:15.687: [0xfa0] UTIL: Found 'IwGxFontTTF.group' using default path
+12/07/13 03:57:15.688: [0xfa0] FILE: s3eFileOpen('IwGxFontTTF.group', 'r') succeeded, id=1017 p=0x10119e08
+12/07/13 03:57:15.688: [0xfa0] FILE: s3eFileClose h=0x10119e08
+12/07/13 03:57:15.689: [0xfa0] UTIL: Found 'font.ttf' using default path
+12/07/13 03:57:15.689: [0xfa0] FILE: s3eFileOpen('font.ttf', 'rb') succeeded, id=1018 p=0x10119f24
+12/07/13 03:57:15.690: [0xfa0] FILE: s3eFileClose h=0x10119f24
+12/07/13 03:57:15.691: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin' using path global 'data-gles1'
+12/07/13 03:57:15.691: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin', 'wb') succeeded, id=1019 p=0x1011a040
+12/07/13 03:57:15.692: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin.txt' using path global 'data-gles1'
+12/07/13 03:57:15.693: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin.txt', 'wt') succeeded, id=1020 p=0x1011a15c
+12/07/13 03:57:15.693: [0xfa0] RESMANAGER: Serialising CIwResList of 1 items
+12/07/13 03:57:15.694: [0xfa0] RESMANAGER: Serialising item 0
+12/07/13 03:57:15.694: [0xfa0] RESMANAGER: Wrote item: classname 0xc084661d, name 0x7c96e4fc
+12/07/13 03:57:15.694: [0xfa0] RESMANAGER: Serialising CIwResList of 2 items
+12/07/13 03:57:15.695: [0xfa0] RESMANAGER: Serialising item 0
+12/07/13 03:57:15.695: [0xfa0] RESMANAGER: Wrote item: classname 0xa68776be, name 0x8c0c2b33
+12/07/13 03:57:15.696: [0xfa0] RESMANAGER: Serialising item 1
+12/07/13 03:57:15.696: [0xfa0] RESMANAGER: Wrote item: classname 0xa68776be, name 0xd91911e
+12/07/13 03:57:15.696: [0xfa0] FILE: s3eFileClose h=0x1011a15c
+12/07/13 03:57:15.697: [0xfa0] FILE: s3eFileClose h=0x1011a040
+12/07/13 03:57:15.697: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin.debug' using path global 'data-gles1'
+12/07/13 03:57:15.698: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin.debug', 'wb') succeeded, id=1021 p=0x1011a278
+12/07/13 03:57:15.699: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin.debug.txt' using path global 'data-gles1'
+12/07/13 03:57:15.699: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin.debug.txt', 'wt') succeeded, id=1022 p=0x1011a394
+12/07/13 03:57:15.700: [0xfa0] FILE: s3eFileClose h=0x1011a394
+12/07/13 03:57:15.700: [0xfa0] FILE: s3eFileClose h=0x1011a278
+12/07/13 03:57:15.701: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.hst' using path global 'data-gles1'
+12/07/13 03:57:15.701: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.hst', 'wb') succeeded, id=1023 p=0x1011a4b0
+12/07/13 03:57:15.702: [0xfa0] FILE: s3eFileClose h=0x1011a4b0
+12/07/13 03:57:15.702: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin' using path global 'data-gles1'
+12/07/13 03:57:15.703: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin', 'rb') succeeded, id=1024 p=0x1011a5cc
+12/07/13 03:57:15.703: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.hst' using path global 'data-gles1'
+12/07/13 03:57:15.704: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.hst', 'r') succeeded, id=1025 p=0x1011a6e8
+12/07/13 03:57:15.704: [0xfa0] FILE: s3eFileClose h=0x1011a6e8
+12/07/13 03:57:15.704: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.hst' using path global 'data-gles1'
+12/07/13 03:57:15.705: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.hst', 'rb') succeeded, id=1026 p=0x1011a804
+12/07/13 03:57:15.705: [0xfa0] FILE: s3eFileClose h=0x1011a804
+12/07/13 03:57:15.706: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin.debug' using path global 'data-gles1'
+12/07/13 03:57:15.706: [0xfa0] UTIL: Found 'data-gles1/IwGxFontTTF.group.bin.debug' using path global 'data-gles1'
+12/07/13 03:57:15.707: [0xfa0] FILE: s3eFileOpen('data-gles1/IwGxFontTTF.group.bin.debug', 'rb') succeeded, id=1027 p=0x1011a920
+12/07/13 03:57:15.707: [0xfa0] FILE: s3eFileClose h=0x1011a920
+12/07/13 03:57:15.708: [0xfa0] RESMANAGER: Serialising CIwResList of 1 items
+12/07/13 03:57:15.708: [0xfa0] RESMANAGER: Serialising item 0
+12/07/13 03:57:15.708: [0xfa0] RESMANAGER: Read item: classname 0xc084661d, name 0x7c96e4fc
+12/07/13 03:57:15.709: [0xfa0] RESMANAGER: Serialising CIwResList of 2 items
+12/07/13 03:57:15.709: [0xfa0] RESMANAGER: Serialising item 0
+12/07/13 03:57:15.709: [0xfa0] RESMANAGER: Read item: classname 0xa68776be, name 0x8c0c2b33
+12/07/13 03:57:15.710: [0xfa0] RESMANAGER: Serialising item 1
+12/07/13 03:57:15.710: [0xfa0] RESMANAGER: Read item: classname 0xa68776be, name 0xd91911e
+12/07/13 03:57:15.710: [0xfa0] FILE: s3eFileClose h=0x1011a5cc
+12/07/13 03:57:15.714: [0xfa0] GX: IwGxSetScreenOrient: 1
+12/07/13 03:57:15.715: [0xfa0] UTIL: Found '/res/textures/button.png' using default path
+12/07/13 03:57:15.715: [0xfa0] FILE: s3eFileOpen('/res/textures/button.png', 'rb') succeeded, id=1028 p=0x1011aa3c
+12/07/13 03:57:15.719: [0xfa0] FILE: s3eFileClose h=0x1011aa3c
+12/07/13 03:57:15.731: [0xfa0] UTIL: Found '/res/textures/button_pressed.png' using default path
+12/07/13 03:57:15.732: [0xfa0] FILE: s3eFileOpen('/res/textures/button_pressed.png', 'rb') succeeded, id=1029 p=0x1011ab58
+12/07/13 03:57:15.736: [0xfa0] FILE: s3eFileClose h=0x1011ab58
+12/07/13 03:57:15.750: [0xfa0] UTIL: Found '/res/textures/sun_red.png' using default path
+12/07/13 03:57:15.751: [0xfa0] FILE: s3eFileOpen('/res/textures/sun_red.png', 'rb') succeeded, id=1030 p=0x1011ac74
+12/07/13 03:57:15.756: [0xfa0] FILE: s3eFileClose h=0x1011ac74
+12/07/13 03:57:15.780: [0xfa0] UTIL: Found '/res/textures/sun_yellow.png' using default path
+12/07/13 03:57:15.781: [0xfa0] FILE: s3eFileOpen('/res/textures/sun_yellow.png', 'rb') succeeded, id=1031 p=0x1011ad90
+12/07/13 03:57:15.801: [0xfa0] FILE: s3eFileClose h=0x1011ad90
+12/07/13 03:57:15.823: [0xfa0] UTIL: Found '/res/textures/ground_forest.png' using default path
+12/07/13 03:57:15.824: [0xfa0] FILE: s3eFileOpen('/res/textures/ground_forest.png', 'rb') succeeded, id=1000 p=0x10118b2c
+12/07/13 03:57:15.835: [0xfa0] FILE: s3eFileClose h=0x10118b2c
+12/07/13 03:57:15.952: [0xfa0] UTIL: Found '/res/textures/grass.png' using default path
+12/07/13 03:57:15.953: [0xfa0] FILE: s3eFileOpen('/res/textures/grass.png', 'rb') succeeded, id=1001 p=0x10118c48
+12/07/13 03:57:15.954: [0xfa0] FILE: s3eFileClose h=0x10118c48
+12/07/13 03:57:15.958: [0xfa0] UTIL: Found '/res/textures/tree_1.png' using default path
+12/07/13 03:57:15.959: [0xfa0] FILE: s3eFileOpen('/res/textures/tree_1.png', 'rb') succeeded, id=1002 p=0x10118d64
+12/07/13 03:57:15.960: [0xfa0] FILE: s3eFileClose h=0x10118d64
+12/07/13 03:57:15.964: [0xfa0] UTIL: Found '/res/textures/tree_2.png' using default path
+12/07/13 03:57:15.964: [0xfa0] FILE: s3eFileOpen('/res/textures/tree_2.png', 'rb') succeeded, id=1003 p=0x10118e80
+12/07/13 03:57:15.966: [0xfa0] FILE: s3eFileClose h=0x10118e80
+12/07/13 03:57:15.969: [0xfa0] UTIL: Found '/res/textures/tree_3.png' using default path
+12/07/13 03:57:15.970: [0xfa0] FILE: s3eFileOpen('/res/textures/tree_3.png', 'rb') succeeded, id=1004 p=0x10118f9c
+12/07/13 03:57:15.971: [0xfa0] FILE: s3eFileClose h=0x10118f9c
+12/07/13 03:57:15.974: [0xfa0] UTIL: Found '/res/textures/tree_4.png' using default path
+12/07/13 03:57:15.975: [0xfa0] FILE: s3eFileOpen('/res/textures/tree_4.png', 'rb') succeeded, id=1005 p=0x101190b8
+12/07/13 03:57:15.976: [0xfa0] FILE: s3eFileClose h=0x101190b8
+12/07/13 03:57:15.983: [0xfa0] UTIL: Found '/res/textures/lvl1.png' using default path
+12/07/13 03:57:15.984: [0xfa0] FILE: s3eFileOpen('/res/textures/lvl1.png', 'rb') succeeded, id=1006 p=0x101191d4
+12/07/13 03:57:15.987: [0xfa0] FILE: s3eFileClose h=0x101191d4
+12/07/13 03:57:16.005: [0xfa0] UTIL: Found '/res/textures/star.png' using default path
+12/07/13 03:57:16.005: [0xfa0] FILE: s3eFileOpen('/res/textures/star.png', 'rb') succeeded, id=1007 p=0x101192f0
+12/07/13 03:57:16.006: [0xfa0] FILE: s3eFileClose h=0x101192f0
+12/07/13 03:57:16.011: [0xfa0] UTIL: Found '/res/textures/kolobok.png' using default path
+12/07/13 03:57:16.012: [0xfa0] FILE: s3eFileOpen('/res/textures/kolobok.png', 'rb') succeeded, id=1008 p=0x1011940c
+12/07/13 03:57:16.014: [0xfa0] FILE: s3eFileClose h=0x1011940c
+12/07/13 03:57:16.031: [0xfa0] GX_FONT_VERBOSE: Uploaded cache
+12/07/13 03:57:16.033: [0xfa0] GX_FONT_VERBOSE: Uploaded cache
+12/07/13 03:57:17.048: [0xfa0] GX_FONT_VERBOSE: Uploaded cache
+12/07/13 03:57:18.952: [0xfa0] IWCRT: mode rb -> 0
+12/07/13 03:57:18.952: [0xfa0] IWCRT: open 3
+12/07/13 03:57:18.953: [0xfa0] FILE: s3eFileOpen('/res/levels/lvl1.lvl', 'rb') succeeded, id=1009 p=0x10119528
+12/07/13 03:57:18.955: [0xfa0] IWCRT: close 3
+12/07/13 03:57:18.955: [0xfa0] FILE: s3eFileClose h=0x10119528

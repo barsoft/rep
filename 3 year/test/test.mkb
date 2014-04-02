@@ -1,0 +1,35 @@
+#!/usr/bin/env mkb
+
+# files specifies all files to build
+defines
+ {
+ IW_GXFONT_TTF
+ }
+files
+{
+    ["src"]
+    (src)
+    main.cpp
+    game.cpp
+    (h)
+    game.h
+}
+
+includepaths
+{
+    h
+}
+
+subprojects
+{
+    iw2d
+}
+#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
+deployments
+{
+	["Default"]
+	android-aliasname='superkey'
+	android-keypass='maksimka023359'
+	android-keystore='superkey.key'
+	android-storepass='maksimka023359'
+}

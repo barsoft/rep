@@ -1,0 +1,51 @@
+#include "SPISOK.h"
+struct ItemMult
+{
+	char *UniversityName;
+	Spisok ListCS;
+	ItemMult *next;
+	ItemMult *prev;
+	ItemMult()
+	{
+		UniversityName=new char[80];
+	}
+};
+class MultiSpisok
+{
+private:
+// VARIABLES
+	ItemMult *Head, * University;
+	int CountUniver;
+	bool emptyMult;
+public:
+// METHODS
+	MultiSpisok()
+	{
+		Head = new ItemMult;     
+		Head->next = NULL;
+		University=Head;
+		University=0;
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//1) IO 
+	void InputConsole(); //Done! INPUT FROM CONSOLE (REWRITE)
+	void OutputConsole(); //Done! INPUT FROM CONSOLE
+	void InputFile(); //Done! INPUT FROM FILE (REWRITE)
+	void OutputFile();  //Done! OUTPUT TO FILE
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//3) SELECTION
+	void SelectUniversity();
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//2) DELETION
+	void DeleteElem();  // Done! DELETION OF ELEMENT FROM POSITION
+	void ResetAll();  //Done! RESET ALL LIST
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//3) ADDITION
+	void DobavlElemVPosiziy();  //Done! ADD ELEMENT TO POSITION
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//4) SPECIAL
+	void Search(); //Done! // SEARCH OF STUDENT IN LIST BY ANY KEY
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//5) EXTRA
+	void Sound();
+};

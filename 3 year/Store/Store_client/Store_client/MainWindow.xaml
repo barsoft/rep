@@ -1,0 +1,98 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Store_client" xmlns:Store="clr-namespace:Store_client" mc:Ignorable="d" x:Class="Store_client.MainWindow"
+        Title="MainWindow" Height="529" Width="825" MinWidth="840" MinHeight="350" Loaded="Window_Loaded">
+
+    <Grid >
+        <Grid.Effect>
+            <DropShadowEffect Opacity="0.5" ShadowDepth="3" Color="#FF00AEFF"/>
+        </Grid.Effect>
+
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStopCollection>
+                    <GradientStop Color="#FF5D5D5D" Offset="0.8">
+                    </GradientStop>
+                    <GradientStop Color="#FF787878" Offset="0.05">
+                    </GradientStop>
+                </GradientStopCollection>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Menu Margin="0,0,0,292" Height="23" VerticalAlignment="Top">
+            <Menu.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF747474" Offset="0.8">
+                        </GradientStop>
+                        <GradientStop Color="#FFE0E0E2" Offset="0.05">
+                        </GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem  Header="File" >
+                <MenuItem Header="Filter" IsCheckable="True" Checked="MenuItem_filter_open_Click" Unchecked="MenuItem_filter_close_Click"/>
+                <MenuItem Header="Exit" Click="MenuItem_exit_Click"/>
+            </MenuItem>
+        </Menu>
+        <TabControl x:Name="tabControl" Margin="10,48,10,50" SelectionChanged="gotfocus" Loaded="load">
+            <TabItem x:Name="instancesTabItem" Header="Instances" >
+                
+                <Grid Background="#FFE5E5E5"  >
+                    
+                    <local:InstancesDataForm x:Name="instancesDataForm"  Width="255" HorizontalAlignment="Right" Height="Auto"/>
+                    <DataGrid x:Name="instancesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,260,0" CanUserDeleteRows="False" CanUserAddRows="False" CanUserResizeRows="False" IsReadOnly="True" IsManipulationEnabled="True" CanUserSortColumns="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="idColumn" Binding="{Binding id}" Header="id" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="product_idColumn" Binding="{Binding product_id}" Header="product id" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="countColumn" Binding="{Binding count}" Header="count" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="delivery_dateColumn" Binding="{Binding delivery_date}" Header="delivery date" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="export_dateColumn" Binding="{Binding export_date}" Header="export date" Width="SizeToHeader"/>
+                            <DataGridCheckBoxColumn x:Name="presenceColumn" Binding="{Binding presence}" Header="presence" Width="SizeToHeader"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="manufacturersTabItem" Header="Manufacturers" >
+                <Grid Background="#FFE5E5E5"  >
+                    <local:ManufacturersDataForm x:Name="manufacturersDataForm" Width="255" HorizontalAlignment="Right" Height="Auto" FocusManager.IsFocusScope="True"/>
+                    <DataGrid x:Name="manufacturersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"   Margin="0,0,260,0" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True" IsTextSearchEnabled="True" CanUserSortColumns="True" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="idColumn1" Binding="{Binding id}" Header="id" Width="30" CanUserSort="True"/>
+                            <DataGridTextColumn x:Name="nameColumn" Binding="{Binding name}" Header="name" Width="100"/>
+                            <DataGridTextColumn x:Name="contact_numberColumn" Binding="{Binding contact_number}" Header="contact number" Width="100"/>
+                            <DataGridTextColumn x:Name="contact_personColumn" Binding="{Binding contact_person}" Header="contact person" Width="110"/>
+                            <DataGridTextColumn x:Name="office_adressColumn" Binding="{Binding office_adress}" Header="office adress" Width="110"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="productsTabItem" Header="Products" >
+                <Grid Background="#FFE5E5E5"  >
+
+                    <local:ProductsDataForm x:Name="productsDataForm" Width="255" HorizontalAlignment="Right" Height="Auto" />
+                    <DataGrid x:Name="productsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,260,0" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="idColumn2" Binding="{Binding id}" Header="id" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="nameColumn1" Binding="{Binding name}" Header="name" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="typeColumn" Binding="{Binding type}" Header="type" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="manufacturer_idColumn" Binding="{Binding manufacturer_id}" Header="manufacturer id" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="price_per_instanceColumn" Binding="{Binding price_per_instance}" Header="price per instance" Width="SizeToHeader"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Results" >
+                <Grid Background="#FFE5E5E5"  >
+                    <DataGrid x:Name="resultsDataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-24.667,-7.769" Height="369" Width="802" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Grid Background="Black" VerticalAlignment="Bottom" Height="45">
+            <Image Margin="10,0,0,10" Source="{DynamicResource Barsoft}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Stretch="Fill" Width="162" Height="25"/>
+        </Grid>
+        
+    </Grid>
+</Window>

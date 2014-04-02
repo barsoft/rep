@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_vc11", "test_vc11.vcxproj", "{DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}"
+
+EndProject
+Global
+    GlobalSection(ExtensibilityGlobals) = postSolution
+    EndGlobalSection
+    GlobalSection(ExtensibilityAddIns) = postSolution
+    EndGlobalSection
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        x86 Debug|Win32 = x86 Debug|Win32
+        x86 Release|Win32 = x86 Release|Win32
+        GCC ARM Debug|Win32 = GCC ARM Debug|Win32
+        GCC ARM Release|Win32 = GCC ARM Release|Win32
+    RVCT ARM Debug|Win32 = RVCT ARM Debug|Win32
+    RVCT ARM Release|Win32 = RVCT ARM Release|Win32
+        GCC MIPS Debug|Win32 = GCC MIPS Debug|Win32
+        GCC MIPS Release|Win32 = GCC MIPS Release|Win32
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.x86 Debug|Win32.Build.0 = x86 Debug|Win32
+		{DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.x86 Release|Win32.ActiveCfg = x86 Release|Win32
+		{DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.x86 Release|Win32.Build.0 = x86 Release|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC ARM Debug|Win32.ActiveCfg = GCC ARM Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC ARM Debug|Win32.Build.0 = GCC ARM Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC ARM Release|Win32.ActiveCfg = GCC ARM Release|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC ARM Release|Win32.Build.0 = GCC ARM Release|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.RVCT ARM Debug|Win32.ActiveCfg = RVCT ARM Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.RVCT ARM Debug|Win32.Build.0 = RVCT ARM Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.RVCT ARM Release|Win32.ActiveCfg = RVCT ARM Release|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.RVCT ARM Release|Win32.Build.0 = RVCT ARM Release|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC MIPS Debug|Win32.ActiveCfg = GCC MIPS Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC MIPS Debug|Win32.Build.0 = GCC MIPS Debug|Win32
+    {DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC MIPS Release|Win32.ActiveCfg = GCC MIPS Release|Win32
+	{DC1CB9A8-8211-E5D7-CA12-2E14F7DC3A31}.GCC MIPS Release|Win32.Build.0 = GCC MIPS Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

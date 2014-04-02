@@ -1,0 +1,16 @@
+ResGroupResources:
+	CIwGxFontTTFont (0xc084661d)
+		"font" (0x7c96e4fc)
+		Size: 85314
+	ResList 'CIwGxFontTTFont' pos:38 size:85324
+
+	CIwGxFont (0xa68776be)
+		"Serif_6" (0x8c0c2b33)
+		Size: 31
+	CIwGxFont (0xa68776be)
+		"Serif_10" (0xd91911e)
+		Size: 31
+	ResList 'CIwGxFont' pos:85362 size:72
+
+ResGroupResources: Wrote 85400 bytes to CIwResGroup "FontTTF"
+

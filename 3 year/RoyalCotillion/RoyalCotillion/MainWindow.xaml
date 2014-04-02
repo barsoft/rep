@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RoyalCotillion" x:Class="RoyalCotillion.MainWindow"
+        Title="RoyalCotillion" Height="840" Width="1280" ResizeMode="NoResize">
+    <Grid x:Name="grid">
+        <Menu  VerticalAlignment="Top" Panel.ZIndex="1" >
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="OnNewClick"/>
+                <MenuItem Header="Exit" Click="OnExitClick"/>
+            </MenuItem>
+            <MenuItem x:Name="edit" Header="Edit">
+                <MenuItem x:Name="undo" Header="Undo" Click="OnUndoClick"/>
+                <MenuItem x:Name="redo" Header="Redo" Click="OnRedoClick"/>
+            </MenuItem>
+            <MenuItem Header="Help" Click="OnHelpClick">
+            </MenuItem>
+        </Menu>
+        <StatusBar   VerticalAlignment="Bottom" Panel.ZIndex="1" >
+            <Label x:Name="time" >
+            </Label>
+            <Label x:Name="status" >
+            </Label>
+        </StatusBar>
+    </Grid>
+</Window>

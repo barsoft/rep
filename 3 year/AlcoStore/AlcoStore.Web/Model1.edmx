@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AlcoStoreDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AlcoStoreDBModelStoreContainer">
+          <EntitySet Name="Bank" EntityType="AlcoStoreDBModel.Store.Bank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contractor" EntityType="AlcoStoreDBModel.Store.Contractor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="AlcoStoreDBModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Steward" EntityType="AlcoStoreDBModel.Store.Steward" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="AlcoStoreDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transaction" EntityType="AlcoStoreDBModel.Store.Transaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transaction_Warehouse_Product" EntityType="AlcoStoreDBModel.Store.Transaction_Warehouse_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Warehouse" EntityType="AlcoStoreDBModel.Store.Warehouse" store:Type="Tables" store:Schema="dbo" store:Name="Warehouse">
+            <DefiningQuery>SELECT 
+      [Warehouse].[Warehouse number] AS [Warehouse number], 
+      [Warehouse].[Product code] AS [Product code], 
+      [Warehouse].[Quantity in warehouse] AS [Quantity in warehouse]
+      FROM [dbo].[Warehouse] AS [Warehouse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Workers" EntityType="AlcoStoreDBModel.Store.Workers" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Завхоз_Складовщики" Association="AlcoStoreDBModel.Store.FK_Завхоз_Складовщики">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="Steward" EntitySet="Steward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Контрагент_Банк" Association="AlcoStoreDBModel.Store.FK_Контрагент_Банк">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Contractor" EntitySet="Contractor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Завхоз" Association="AlcoStoreDBModel.Store.FK_Накладная_Завхоз">
+            <End Role="Steward" EntitySet="Steward" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Контрагент" Association="AlcoStoreDBModel.Store.FK_Накладная_Контрагент">
+            <End Role="Contractor" EntitySet="Contractor" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Накладная-Склад-Товар1" Association="AlcoStoreDBModel.Store.FK_Накладная_Накладная-Склад-Товар1">
+            <End Role="Transaction_Warehouse_Product" EntitySet="Transaction_Warehouse_Product" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Складовщики" Association="AlcoStoreDBModel.Store.FK_Накладная_Складовщики">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная-Склад-Товар_Товар" Association="AlcoStoreDBModel.Store.FK_Накладная-Склад-Товар_Товар">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Transaction_Warehouse_Product" EntitySet="Transaction_Warehouse_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Склад_Товар" Association="AlcoStoreDBModel.Store.FK_Склад_Товар">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Warehouse" EntitySet="Warehouse" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="MFO" />
+          </Key>
+          <Property Name="MFO" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Bank name" Type="nchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Contractor">
+          <Key>
+            <PropertyRef Name="Contractor code" />
+          </Key>
+          <Property Name="Contractor code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Contractor code2" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Payer code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Current account" Type="nchar" Nullable="false" MaxLength="25" />
+          <Property Name="MFO" Type="nchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product code" />
+          </Key>
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Product code" Type="nchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Steward">
+          <Key>
+            <PropertyRef Name="Steward code" />
+          </Key>
+          <Property Name="Steward code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Worker code" Type="nchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Transaction code" />
+          </Key>
+          <Property Name="Transaction code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Transaction number" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Contractor code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Steward code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Type of transaction" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Worker code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Product code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Number" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction_Warehouse_Product">
+          <Key>
+            <PropertyRef Name="Transaction code" />
+          </Key>
+          <Property Name="Transaction code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Product code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Quantity in warehouse" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+      предупреждение 6002: В таблице или представлении "C:\USERS\MAKS\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\ALCOSTORE\ALCOSTORE.WEB\APP_DATA\ALCOSTOREDB.MDF.dbo.Warehouse" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.
+      -->
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="Warehouse number" />
+            <PropertyRef Name="Product code" />
+            <PropertyRef Name="Quantity in warehouse" />
+          </Key>
+          <Property Name="Warehouse number" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Product code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Quantity in warehouse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Worker code" />
+          </Key>
+          <Property Name="Worker code" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="Surname" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Middle name" Type="nchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Завхоз_Складовщики">
+          <End Role="Workers" Type="AlcoStoreDBModel.Store.Workers" Multiplicity="1" />
+          <End Role="Steward" Type="AlcoStoreDBModel.Store.Steward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Worker code" />
+            </Principal>
+            <Dependent Role="Steward">
+              <PropertyRef Name="Worker code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Контрагент_Банк">
+          <End Role="Bank" Type="AlcoStoreDBModel.Store.Bank" Multiplicity="1" />
+          <End Role="Contractor" Type="AlcoStoreDBModel.Store.Contractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="MFO" />
+            </Principal>
+            <Dependent Role="Contractor">
+              <PropertyRef Name="MFO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Завхоз">
+          <End Role="Steward" Type="AlcoStoreDBModel.Store.Steward" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steward">
+              <PropertyRef Name="Steward code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Steward code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Контрагент">
+          <End Role="Contractor" Type="AlcoStoreDBModel.Store.Contractor" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contractor">
+              <PropertyRef Name="Contractor code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Contractor code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Накладная-Склад-Товар1">
+          <End Role="Transaction_Warehouse_Product" Type="AlcoStoreDBModel.Store.Transaction_Warehouse_Product" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Store.Transaction" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction_Warehouse_Product">
+              <PropertyRef Name="Transaction code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Transaction code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Складовщики">
+          <End Role="Workers" Type="AlcoStoreDBModel.Store.Workers" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Worker code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Worker code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная-Склад-Товар_Товар">
+          <End Role="Product" Type="AlcoStoreDBModel.Store.Product" Multiplicity="1" />
+          <End Role="Transaction_Warehouse_Product" Type="AlcoStoreDBModel.Store.Transaction_Warehouse_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product code" />
+            </Principal>
+            <Dependent Role="Transaction_Warehouse_Product">
+              <PropertyRef Name="Product code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Склад_Товар">
+          <End Role="Product" Type="AlcoStoreDBModel.Store.Product" Multiplicity="1" />
+          <End Role="Warehouse" Type="AlcoStoreDBModel.Store.Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product code" />
+            </Principal>
+            <Dependent Role="Warehouse">
+              <PropertyRef Name="Product code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlcoStoreDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AlcoStoreDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bank" EntityType="AlcoStoreDBModel.Bank" />
+          <EntitySet Name="Contractor" EntityType="AlcoStoreDBModel.Contractor" />
+          <EntitySet Name="Product" EntityType="AlcoStoreDBModel.Product" />
+          <EntitySet Name="Steward" EntityType="AlcoStoreDBModel.Steward" />
+          <EntitySet Name="sysdiagrams" EntityType="AlcoStoreDBModel.sysdiagrams" />
+          <EntitySet Name="Transaction" EntityType="AlcoStoreDBModel.Transaction" />
+          <EntitySet Name="Transaction_Warehouse_Product" EntityType="AlcoStoreDBModel.Transaction_Warehouse_Product" />
+          <EntitySet Name="Warehouse" EntityType="AlcoStoreDBModel.Warehouse" />
+          <EntitySet Name="Workers" EntityType="AlcoStoreDBModel.Workers" />
+          <AssociationSet Name="FK_Контрагент_Банк" Association="AlcoStoreDBModel.FK_Контрагент_Банк">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Contractor" EntitySet="Contractor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Контрагент" Association="AlcoStoreDBModel.FK_Накладная_Контрагент">
+            <End Role="Contractor" EntitySet="Contractor" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Склад_Товар_Товар" Association="AlcoStoreDBModel.FK_Накладная_Склад_Товар_Товар">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Transaction_Warehouse_Product" EntitySet="Transaction_Warehouse_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Склад_Товар" Association="AlcoStoreDBModel.FK_Склад_Товар">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Warehouse" EntitySet="Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Завхоз_Складовщики" Association="AlcoStoreDBModel.FK_Завхоз_Складовщики">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="Steward" EntitySet="Steward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Завхоз" Association="AlcoStoreDBModel.FK_Накладная_Завхоз">
+            <End Role="Steward" EntitySet="Steward" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Накладная_Склад_Товар1" Association="AlcoStoreDBModel.FK_Накладная_Накладная_Склад_Товар1">
+            <End Role="Transaction_Warehouse_Product" EntitySet="Transaction_Warehouse_Product" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Накладная_Складовщики" Association="AlcoStoreDBModel.FK_Накладная_Складовщики">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="MFO" />
+          </Key>
+          <Property Name="MFO" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Bank_name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Contractor" Relationship="AlcoStoreDBModel.FK_Контрагент_Банк" FromRole="Bank" ToRole="Contractor" />
+        </EntityType>
+        <EntityType Name="Contractor">
+          <Key>
+            <PropertyRef Name="Contractor_code" />
+          </Key>
+          <Property Name="Contractor_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Contractor_code2" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Payer_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Current_account" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="true" />
+          <Property Name="MFO" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Bank" Relationship="AlcoStoreDBModel.FK_Контрагент_Банк" FromRole="Contractor" ToRole="Bank" />
+          <NavigationProperty Name="Transaction" Relationship="AlcoStoreDBModel.FK_Накладная_Контрагент" FromRole="Contractor" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_code" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Product_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Transaction_Warehouse_Product" Relationship="AlcoStoreDBModel.FK_Накладная_Склад_Товар_Товар" FromRole="Product" ToRole="Transaction_Warehouse_Product" />
+          <NavigationProperty Name="Warehouse" Relationship="AlcoStoreDBModel.FK_Склад_Товар" FromRole="Product" ToRole="Warehouse" />
+        </EntityType>
+        <EntityType Name="Steward">
+          <Key>
+            <PropertyRef Name="Steward_code" />
+          </Key>
+          <Property Name="Steward_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Worker_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Workers" Relationship="AlcoStoreDBModel.FK_Завхоз_Складовщики" FromRole="Steward" ToRole="Workers" />
+          <NavigationProperty Name="Transaction" Relationship="AlcoStoreDBModel.FK_Накладная_Завхоз" FromRole="Steward" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Transaction_code" />
+          </Key>
+          <Property Name="Transaction_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Transaction_number" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Contractor_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Steward_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Type_of_transaction" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Worker_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Product_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Contractor" Relationship="AlcoStoreDBModel.FK_Накладная_Контрагент" FromRole="Transaction" ToRole="Contractor" />
+          <NavigationProperty Name="Steward" Relationship="AlcoStoreDBModel.FK_Накладная_Завхоз" FromRole="Transaction" ToRole="Steward" />
+          <NavigationProperty Name="Transaction_Warehouse_Product" Relationship="AlcoStoreDBModel.FK_Накладная_Накладная_Склад_Товар1" FromRole="Transaction" ToRole="Transaction_Warehouse_Product" />
+          <NavigationProperty Name="Workers" Relationship="AlcoStoreDBModel.FK_Накладная_Складовщики" FromRole="Transaction" ToRole="Workers" />
+        </EntityType>
+        <EntityType Name="Transaction_Warehouse_Product">
+          <Key>
+            <PropertyRef Name="Transaction_code" />
+          </Key>
+          <Property Name="Transaction_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Product_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Quantity_in_warehouse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="AlcoStoreDBModel.FK_Накладная_Склад_Товар_Товар" FromRole="Transaction_Warehouse_Product" ToRole="Product" />
+          <NavigationProperty Name="Transaction" Relationship="AlcoStoreDBModel.FK_Накладная_Накладная_Склад_Товар1" FromRole="Transaction_Warehouse_Product" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="Warehouse_number" />
+            <PropertyRef Name="Product_code" />
+            <PropertyRef Name="Quantity_in_warehouse" />
+          </Key>
+          <Property Name="Warehouse_number" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Product_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Quantity_in_warehouse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="AlcoStoreDBModel.FK_Склад_Товар" FromRole="Warehouse" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Worker_code" />
+          </Key>
+          <Property Name="Worker_code" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Middle_name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Steward" Relationship="AlcoStoreDBModel.FK_Завхоз_Складовщики" FromRole="Workers" ToRole="Steward" />
+          <NavigationProperty Name="Transaction" Relationship="AlcoStoreDBModel.FK_Накладная_Складовщики" FromRole="Workers" ToRole="Transaction" />
+        </EntityType>
+        <Association Name="FK_Контрагент_Банк">
+          <End Role="Bank" Type="AlcoStoreDBModel.Bank" Multiplicity="1" />
+          <End Role="Contractor" Type="AlcoStoreDBModel.Contractor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="MFO" />
+            </Principal>
+            <Dependent Role="Contractor">
+              <PropertyRef Name="MFO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Контрагент">
+          <End Role="Contractor" Type="AlcoStoreDBModel.Contractor" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contractor">
+              <PropertyRef Name="Contractor_code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Contractor_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Склад_Товар_Товар">
+          <End Role="Product" Type="AlcoStoreDBModel.Product" Multiplicity="1" />
+          <End Role="Transaction_Warehouse_Product" Type="AlcoStoreDBModel.Transaction_Warehouse_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_code" />
+            </Principal>
+            <Dependent Role="Transaction_Warehouse_Product">
+              <PropertyRef Name="Product_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Склад_Товар">
+          <End Role="Product" Type="AlcoStoreDBModel.Product" Multiplicity="1" />
+          <End Role="Warehouse" Type="AlcoStoreDBModel.Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Product_code" />
+            </Principal>
+            <Dependent Role="Warehouse">
+              <PropertyRef Name="Product_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Завхоз_Складовщики">
+          <End Role="Workers" Type="AlcoStoreDBModel.Workers" Multiplicity="1" />
+          <End Role="Steward" Type="AlcoStoreDBModel.Steward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Worker_code" />
+            </Principal>
+            <Dependent Role="Steward">
+              <PropertyRef Name="Worker_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Завхоз">
+          <End Role="Steward" Type="AlcoStoreDBModel.Steward" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steward">
+              <PropertyRef Name="Steward_code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Steward_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Накладная_Склад_Товар1">
+          <End Role="Transaction_Warehouse_Product" Type="AlcoStoreDBModel.Transaction_Warehouse_Product" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Transaction" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction_Warehouse_Product">
+              <PropertyRef Name="Transaction_code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Transaction_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Накладная_Складовщики">
+          <End Role="Workers" Type="AlcoStoreDBModel.Workers" Multiplicity="1" />
+          <End Role="Transaction" Type="AlcoStoreDBModel.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Worker_code" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Worker_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlcoStoreDBModelStoreContainer" CdmEntityContainer="AlcoStoreDBEntities">
+          <EntitySetMapping Name="Bank"><EntityTypeMapping TypeName="AlcoStoreDBModel.Bank"><MappingFragment StoreEntitySet="Bank">
+            <ScalarProperty Name="MFO" ColumnName="MFO" />
+            <ScalarProperty Name="Bank_name" ColumnName="Bank name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Contractor"><EntityTypeMapping TypeName="AlcoStoreDBModel.Contractor"><MappingFragment StoreEntitySet="Contractor">
+            <ScalarProperty Name="Contractor_code" ColumnName="Contractor code" />
+            <ScalarProperty Name="Contractor_code2" ColumnName="Contractor code2" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Payer_code" ColumnName="Payer code" />
+            <ScalarProperty Name="Current_account" ColumnName="Current account" />
+            <ScalarProperty Name="MFO" ColumnName="MFO" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Product"><EntityTypeMapping TypeName="AlcoStoreDBModel.Product"><MappingFragment StoreEntitySet="Product">
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Product_code" ColumnName="Product code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Steward"><EntityTypeMapping TypeName="AlcoStoreDBModel.Steward"><MappingFragment StoreEntitySet="Steward">
+            <ScalarProperty Name="Steward_code" ColumnName="Steward code" />
+            <ScalarProperty Name="Worker_code" ColumnName="Worker code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="AlcoStoreDBModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Transaction"><EntityTypeMapping TypeName="AlcoStoreDBModel.Transaction"><MappingFragment StoreEntitySet="Transaction">
+            <ScalarProperty Name="Transaction_code" ColumnName="Transaction code" />
+            <ScalarProperty Name="Transaction_number" ColumnName="Transaction number" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Contractor_code" ColumnName="Contractor code" />
+            <ScalarProperty Name="Steward_code" ColumnName="Steward code" />
+            <ScalarProperty Name="Type_of_transaction" ColumnName="Type of transaction" />
+            <ScalarProperty Name="Worker_code" ColumnName="Worker code" />
+            <ScalarProperty Name="Product_code" ColumnName="Product code" />
+            <ScalarProperty Name="Number" ColumnName="Number" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Transaction_Warehouse_Product"><EntityTypeMapping TypeName="AlcoStoreDBModel.Transaction_Warehouse_Product"><MappingFragment StoreEntitySet="Transaction_Warehouse_Product">
+            <ScalarProperty Name="Transaction_code" ColumnName="Transaction code" />
+            <ScalarProperty Name="Product_code" ColumnName="Product code" />
+            <ScalarProperty Name="Quantity_in_warehouse" ColumnName="Quantity in warehouse" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Warehouse"><EntityTypeMapping TypeName="AlcoStoreDBModel.Warehouse"><MappingFragment StoreEntitySet="Warehouse">
+            <ScalarProperty Name="Warehouse_number" ColumnName="Warehouse number" />
+            <ScalarProperty Name="Product_code" ColumnName="Product code" />
+            <ScalarProperty Name="Quantity_in_warehouse" ColumnName="Quantity in warehouse" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Workers"><EntityTypeMapping TypeName="AlcoStoreDBModel.Workers"><MappingFragment StoreEntitySet="Workers">
+            <ScalarProperty Name="Worker_code" ColumnName="Worker code" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Middle_name" ColumnName="Middle name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Bank" Width="1.5" PointX="0.75" PointY="6.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Contractor" Width="1.5" PointX="3" PointY="6.125" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Product" Width="1.5" PointX="0.75" PointY="9.375" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Steward" Width="1.5" PointX="3" PointY="1.875" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Transaction" Width="1.5" PointX="5.25" PointY="1" Height="3.5186979166666665" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Transaction_Warehouse_Product" Width="1.5" PointX="3" PointY="9.375" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Warehouse" Width="1.5" PointX="3" PointY="12.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcoStoreDBModel.Workers" Width="1.5" PointX="0.75" PointY="1.625" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Контрагент_Банк" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.297841796875" />
+          <ConnectorPoint PointX="3" PointY="7.297841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Накладная_Контрагент" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.2374886067708317" />
+          <ConnectorPoint PointX="5.2447891666666671" PointY="8.2374886067708317" />
+          <ConnectorPoint PointX="5.4114558333333331" PointY="8.2374886067708317" />
+          <ConnectorPoint PointX="5.46875" PointY="8.2374886067708317" />
+          <ConnectorPoint PointX="5.46875" PointY="4.5186979166666665" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Накладная_Склад_Товар_Товар" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.365143229166666" />
+          <ConnectorPoint PointX="3" PointY="10.365143229166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Склад_Товар" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="11.355286458333332" />
+          <ConnectorPoint PointX="1.5" PointY="13.393992513020834" />
+          <ConnectorPoint PointX="3" PointY="13.393992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Завхоз_Складовщики" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.7689925130208328" />
+          <ConnectorPoint PointX="3" PointY="2.7689925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Накладная_Завхоз" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.7689925130208328" />
+          <ConnectorPoint PointX="5.25" PointY="2.7689925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Накладная_Накладная_Склад_Товар1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.365143229166666" />
+          <ConnectorPoint PointX="5.3281225" PointY="10.365143229166666" />
+          <ConnectorPoint PointX="5.3281225" PointY="4.5186979166666665" />
+        </AssociationConnector>
+        <AssociationConnector Association="AlcoStoreDBModel.FK_Накладная_Складовщики" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.71875" />
+          <ConnectorPoint PointX="5.25" PointY="1.71875" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

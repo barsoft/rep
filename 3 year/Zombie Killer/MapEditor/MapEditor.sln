@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEditor", "MapEditor\MapEditor\MapEditor.csproj", "{F68F7F06-FFF3-4C42-AE0F-1EC9A3343252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame3Content", "MapEditor\WindowsGame3Content\WindowsGame3Content.contentproj", "{AFEF577F-57A2-498E-ABF2-B2FD935A8BAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F68F7F06-FFF3-4C42-AE0F-1EC9A3343252}.Debug|x86.ActiveCfg = Debug|x86
+		{F68F7F06-FFF3-4C42-AE0F-1EC9A3343252}.Debug|x86.Build.0 = Debug|x86
+		{F68F7F06-FFF3-4C42-AE0F-1EC9A3343252}.Release|x86.ActiveCfg = Release|x86
+		{F68F7F06-FFF3-4C42-AE0F-1EC9A3343252}.Release|x86.Build.0 = Release|x86
+		{AFEF577F-57A2-498E-ABF2-B2FD935A8BAF}.Debug|x86.ActiveCfg = Debug|x86
+		{AFEF577F-57A2-498E-ABF2-B2FD935A8BAF}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

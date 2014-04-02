@@ -1,0 +1,314 @@
+body {
+    Font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    Background: #6d0f0f;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.content-body {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d4d4d4), color-stop(1, #bababa) );
+    background:-moz-linear-gradient( center top, #d4d4d4 5%, #bababa 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4d4d4', endColorstr='#bababa');
+    background-color:#d4d4d4;
+
+    -webkit-border-top-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius-topright:5px;
+    border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-left-radius:5px;
+    text-indent:0;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #ffffff;
+}
+/*
+Form Style - This is what you want
+------------------------------------------------------------------ */
+.content-inner{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+    background-color:#ededed;
+
+    -webkit-border-top-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius-topright:5px;
+    border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-left-radius:5px;
+    text-indent:0;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #ffffff;
+
+}
+
+/*
+Text field Style - This is what you want
+------------------------------------------------------------------ */
+
+.text-field{
+    background-color: rgba(255, 255, 255, 1);
+
+    font-family:Arial, Helvetica, sans-serif;
+    color:#666;
+    font-size:12px;
+    text-shadow: 1px 1px 0px #fff;
+
+    border:#ccc 1px solid;
+
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    -moz-box-shadow: 0 1px 2px #d1d1d1;
+    -webkit-box-shadow: 0 1px 2px #d1d1d1;
+    box-shadow: 0 1px 2px #d1d1d1;
+
+    height: 20px;
+    width: 90%;
+
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+/*
+Button Style - This is what you want
+------------------------------------------------------------------ */
+.button-normal {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+    background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+    background-color:#f24537;
+    -webkit-border-top-left-radius:20px;
+    -moz-border-radius-topleft:20px;
+    border-top-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+    -moz-border-radius-topright:20px;
+    border-top-right-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    -moz-border-radius-bottomright:20px;
+    border-bottom-right-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    -moz-border-radius-bottomleft:20px;
+    border-bottom-left-radius:20px;
+    text-indent:0;
+    border:1px solid #d02718;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:50px;
+    line-height:50px;
+    width:100px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #810e05;
+}
+.button-normal:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+    background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+    background-color:#c62d1f;
+}.button-normal:active {
+    position:relative;
+    top:1px;
+}
+
+/*
+Button Style - This is what you want
+------------------------------------------------------------------ */
+.button-small {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+    background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+    background-color:#f24537;
+    -webkit-border-top-left-radius:10px;
+    -moz-border-radius-topleft:10px;
+    border-top-left-radius:10px;
+    -webkit-border-top-right-radius:10px;
+    -moz-border-radius-topright:10px;
+    border-top-right-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-radius-bottomright:10px;
+    border-bottom-right-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+    border-bottom-left-radius:10px;
+    text-indent:0;
+    border:1px solid #d02718;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:30px;
+    line-height:30px;
+    width:80px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #810e05;
+}
+.button-small:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+    background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+    background-color:#c62d1f;
+}.button-small:active {
+    position:relative;
+    top:1px;
+}
+/*
+Table Style - This is what you want
+------------------------------------------------------------------ */
+.simple-table a:link {
+    color: #666;
+    font-weight: bold;
+    text-decoration:none;
+}
+.simple-table a:visited {
+    color: #999999;
+    font-weight:bold;
+    text-decoration:none;
+}
+.simple-table a:active,
+.simple-table a:hover {
+    color: #bd5a35;
+    text-decoration:underline;
+}
+.simple-table {
+    font-family:Arial, Helvetica, sans-serif;
+    color:#666;
+    font-size:12px;
+    text-shadow: 1px 1px 0px #fff;
+    background:#eaebec;
+
+    border:#ccc 1px solid;
+
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    -moz-box-shadow: 0 1px 2px #d1d1d1;
+    -webkit-box-shadow: 0 1px 2px #d1d1d1;
+    box-shadow: 0 1px 2px #d1d1d1;
+}
+.simple-table th {
+    padding:21px 25px 22px 25px;
+    border-top:1px solid #fafafa;
+    border-bottom:1px solid #e0e0e0;
+
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+    background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+
+.simple-table tr{
+    text-align: center;
+}
+.simple-table tr td {
+
+    border-top: 1px solid #ffffff;
+    border-bottom:1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+
+    background: #fafafa;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+    background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+
+    padding: 10px;
+}
+
+.simple-table tr:hover td{
+    background: #f2f2f2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+    background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+
+
+.header-body
+{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #730a00) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #730a00 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#730a00');
+    background-color:#ededed;
+    -webkit-border-top-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius-topright:5px;
+    border-top-right-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    border-bottom-right-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-bottomleft:5px;
+    border-bottom-left-radius:5px;
+    text-indent:0;
+
+    display:inline-block;
+    color:#777777;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+
+
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 0px 0px #ffffff;
+
+}
+.header-logo
+{
+    width: 400px;
+    height: 120px;
+
+}

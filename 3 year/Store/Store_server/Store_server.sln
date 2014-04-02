@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store_server", "Store_server\Store_server.csproj", "{5253C6ED-11D4-4814-BC3B-EEB79B3702FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store_client", "..\Store_client\Store_client\Store_client.csproj", "{2FC4EE84-63CF-4051-BBFA-34426D7E2F76}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5253C6ED-11D4-4814-BC3B-EEB79B3702FD} = {5253C6ED-11D4-4814-BC3B-EEB79B3702FD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5253C6ED-11D4-4814-BC3B-EEB79B3702FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5253C6ED-11D4-4814-BC3B-EEB79B3702FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5253C6ED-11D4-4814-BC3B-EEB79B3702FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5253C6ED-11D4-4814-BC3B-EEB79B3702FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC4EE84-63CF-4051-BBFA-34426D7E2F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC4EE84-63CF-4051-BBFA-34426D7E2F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC4EE84-63CF-4051-BBFA-34426D7E2F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC4EE84-63CF-4051-BBFA-34426D7E2F76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

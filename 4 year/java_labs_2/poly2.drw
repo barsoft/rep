@@ -1,0 +1,23 @@
+<com.barsoft.java__labs.lab5.simple.PolyLine>
+  <points>
+    <java.awt.Point>
+      <x>150</x>
+      <y>100</y>
+    </java.awt.Point>
+    <java.awt.Point>
+      <x>0</x>
+      <y>0</y>
+    </java.awt.Point>
+    <java.awt.Point>
+      <x>30</x>
+      <y>80</y>
+    </java.awt.Point>
+  </points>
+  <color>
+    <red>255</red>
+    <green>0</green>
+    <blue>0</blue>
+    <alpha>255</alpha>
+  </color>
+  <strokeSize>10</strokeSize>
+</com.barsoft.java__labs.lab5.simple.PolyLine>

@@ -1,0 +1,6 @@
+build "ARM GCC Debug"
+outdir "c:/Users/maks/Documents/test/build_test_vc11"
+!task !name "Default:android" "Package, Install and Run"
+!config !name "Default"
+!config <os> "android"
+configlist "Default",

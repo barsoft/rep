@@ -1,0 +1,24 @@
+.footer-body{
+    margin:10px;
+    width: 1004px; 
+    height: 100px;
+    background:#eaebec;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    font-family:Arial, Helvetica, sans-serif;
+    color:#666;
+    font-size:12px;
+    text-shadow: 1px 1px 0px #fff;
+
+    border:#ccc 1px solid;
+
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    -moz-box-shadow: 0 1px 2px #d1d1d1;
+    -webkit-box-shadow: 0 1px 2px #d1d1d1;
+    box-shadow: 0 1px 2px #d1d1d1;
+    
+}

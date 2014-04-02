@@ -1,0 +1,186 @@
+﻿<navigation:Page x:Class="AlcoStore.Views.Tables" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="931" d:DesignHeight="480"
+           Title="Tables Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:riaControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.DomainServices" xmlns:my="clr-namespace:AlcoStore.Web" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" Loaded="Page_Loaded">
+    <Grid x:Name="LayoutRoot" Width="941">
+        <sdk:TabControl Height="456" HorizontalAlignment="Left" Margin="12,12,0,0" Name="tabControl1" VerticalAlignment="Top" Width="917">
+            <sdk:TabItem Header="Banks" Name="Banks">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Bank, CreateList=true}" Height="0" Name="bankDomainDataSource" QueryName="GetBankQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=bankDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="bankDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="bank_nameColumn" Binding="{Binding Path=Bank_name}" Header="Bank name" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="mFOColumn" Binding="{Binding Path=MFO, Mode=OneWay}" Header="MFO" IsReadOnly="True" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="bankDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="bankDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=bankDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=bankDomainDataSource}" DeletingItem="bankDataForm_DeletingItem"
+                        />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Contractors" Name="Contractors">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Contractor, CreateList=true}" Height="0" Name="contractorDomainDataSource" QueryName="GetContractorQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=contractorDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="contractorDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="contractor_codeColumn" Binding="{Binding Path=Contractor_code, Mode=OneWay}" Header="Contractor code" IsReadOnly="True" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="contractor_code2Column" Binding="{Binding Path=Contractor_code2}" Header="Contractor code 2" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="current_accountColumn" Binding="{Binding Path=Current_account}" Header="Current account" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="mFOColumn1" Binding="{Binding Path=MFO}" Header="MFO" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="nameColumn" Binding="{Binding Path=Name}" Header="Name" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="payer_codeColumn" Binding="{Binding Path=Payer_code}" Header="Payer code" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="contractorDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="contractorDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=contractorDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=contractorDomainDataSource}" DeletingItem="contractorDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Products" Name="Products">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Product, CreateList=true}" Height="0" Name="productDomainDataSource" QueryName="GetProductQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=productDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="productDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="nameColumn1" Binding="{Binding Path=Name}" Header="Name" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="priceColumn" Binding="{Binding Path=Price}" Header="Price" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="product_codeColumn" Binding="{Binding Path=Product_code, Mode=OneWay}" Header="Product code" IsReadOnly="True" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="productDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="productDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=productDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=productDomainDataSource}" DeletingItem="productDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Stewards" Name="Stewards">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Steward, CreateList=true}" Height="0" Name="stewardDomainDataSource" QueryName="GetStewardQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=stewardDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="stewardDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="steward_codeColumn" Binding="{Binding Path=Steward_code, Mode=OneWay}" Header="Steward code" IsReadOnly="True" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="worker_codeColumn" Binding="{Binding Path=Worker_code}" Header="Worker code" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="stewardDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="stewardDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=stewardDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=stewardDomainDataSource}" DeletingItem="stewardDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Transactions" Name="Transactions">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Transaction, CreateList=true}" Height="0"  Name="transactionDomainDataSource" QueryName="GetTransactionQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=transactionDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="transactionDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="contractor_codeColumn1" Binding="{Binding Path=Contractor_code}" Header="Contractor code" Width="SizeToHeader" />
+                            <sdk:DataGridTemplateColumn x:Name="dateColumn" Header="Date" Width="SizeToHeader">
+                                <sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <sdk:DatePicker SelectedDate="{Binding Path=Date, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellEditingTemplate>
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Date, StringFormat=\{0:d\}}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>
+                            <sdk:DataGridTextColumn x:Name="numberColumn" Binding="{Binding Path=Number}" Header="Number" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="product_codeColumn1" Binding="{Binding Path=Product_code}" Header="Product code" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="steward_codeColumn1" Binding="{Binding Path=Steward_code}" Header="Steward code" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="transaction_codeColumn" Binding="{Binding Path=Transaction_code}" Header="Transaction code" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="transaction_numberColumn" Binding="{Binding Path=Transaction_number}" Header="Transaction number" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="type_of_transactionColumn" Binding="{Binding Path=Type_of_transaction}" Header="Type of transaction" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="worker_codeColumn1" Binding="{Binding Path=Worker_code}" Header="Worker code" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="transactionDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="transactionDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=transactionDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=transactionDomainDataSource}" DeletingItem="transactionDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="TransactionsWP" Name="TransactionsWP">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Transaction_Warehouse_Product, CreateList=true}" Height="0"  Name="transaction_Warehouse_ProductDomainDataSource" QueryName="GetTransaction_Warehouse_ProductQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=transaction_Warehouse_ProductDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="transaction_Warehouse_ProductDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="product_codeColumn2" Binding="{Binding Path=Product_code}" Header="Product code" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="quantity_in_warehouseColumn" Binding="{Binding Path=Quantity_in_warehouse}" Header="Quantity in warehouse" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="transaction_codeColumn1" Binding="{Binding Path=Transaction_code, Mode=OneWay}" Header="Transaction code" IsReadOnly="True" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="transaction_Warehouse_ProductDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="transaction_Warehouse_ProductDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=transaction_Warehouse_ProductDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=transaction_Warehouse_ProductDomainDataSource}" DeletingItem="transaction_Warehouse_ProductDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Warehouses" Name="Warehouses">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Warehouse, CreateList=true}" Height="0"  Name="warehouseDomainDataSource" QueryName="GetWarehouseQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=warehouseDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="warehouseDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="product_codeColumn3" Binding="{Binding Path=Product_code}" Header="Product code" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="quantity_in_warehouseColumn1" Binding="{Binding Path=Quantity_in_warehouse}" Header="Quantity in warehouse" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="warehouse_numberColumn" Binding="{Binding Path=Warehouse_number}" Header="Warehouse number" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="warehouseDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="warehouseDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=warehouseDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=warehouseDomainDataSource}" DeletingItem="warehouseDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Workers" Name="Workers">
+                <Grid>
+                    <riaControls:DomainDataSource AutoLoad="True" d:DesignData="{d:DesignInstance my:Workers, CreateList=true}" Height="0"  Name="workersDomainDataSource" QueryName="GetWorkersQuery" Width="0">
+                        <riaControls:DomainDataSource.DomainContext>
+                            <my:DomainService1 />
+                        </riaControls:DomainDataSource.DomainContext>
+                    </riaControls:DomainDataSource>
+                    <sdk:DataGrid AutoGenerateColumns="False" Height="407" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=workersDomainDataSource, Path=Data}" Margin="6,6,0,0" Name="workersDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="590">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn x:Name="middle_nameColumn" Binding="{Binding Path=Middle_name}" Header="Middle name" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="nameColumn2" Binding="{Binding Path=Name}" Header="Name" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="surnameColumn" Binding="{Binding Path=Surname}" Header="Surname" Width="SizeToHeader" />
+                            <sdk:DataGridTextColumn x:Name="worker_codeColumn2" Binding="{Binding Path=Worker_code, Mode=OneWay}" Header="Worker code" IsReadOnly="True" Width="SizeToHeader" />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                    <toolkit:DataForm HorizontalAlignment="Left" Margin="602,6,0,0" Name="workersDataForm" VerticalAlignment="Top" Height="407" Width="297" EditEnded="workersDataForm_EditEnded" 
+                                      CurrentItem="{Binding ElementName=workersDataGrid, Path=SelectedItem, Mode=TwoWay}" AutoGenerateFields="True" AutoCommit="False" AutoEdit="False"
+                                       ItemsSource="{Binding Path=Data, ElementName=workersDomainDataSource}" DeletingItem="workersDataForm_DeletingItem" />
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </Grid>
+</navigation:Page>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="Store_client.InstancesFilter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Filter" Height="380" Width="311" ResizeMode="NoResize">
+    <Grid Loaded="load">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="274" DropDownClosed="DropDownClose">
+            <ComboBoxItem Content="Instances"/>
+            <ComboBoxItem Content="Products"/>
+            <ComboBoxItem Content="Manufacturers"/>
+        </ComboBox>
+
+        <Label Content="Product" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.711,-1.962" Width="67"/>
+        <Label Content="Count" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.711,-1.962" Width="55"/>
+        <Label Content="Delivery date" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.711,-1.962" Width="103"/>
+        <Label Content="Export date" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.711,-1.962" Width="93"/>
+        <ComboBox  x:Name="productComboBox" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="274" DropDownOpened="DropDownOpened"/>
+        <TextBox x:Name="countTextBox" HorizontalAlignment="Left" Height="26" Margin="10,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274"/>
+        <DatePicker x:Name="deliveryDatePicker" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="274"/>
+        <DatePicker x:Name="exportDatePicker" HorizontalAlignment="Left" Margin="10,254,0,0" VerticalAlignment="Top" Width="274"/>
+        <Label Content="Table" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.711,-1.962" Width="67"/>
+        <Button Content="Filter" HorizontalAlignment="Center" Margin="112,0,104,10" VerticalAlignment="Bottom" Width="76" Click="Button_filter_Click"/>
+
+    </Grid>
+</Window>

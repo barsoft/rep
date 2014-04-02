@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+.title {
+    font-family: Tahoma, Gadget, sans-serif;
+    font-size: 36px;
+    background-color: #999;
+}
+.button {
+    position: relative;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.label {
+    position: relative;
+
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.errorlabel {
+    position: relative;
+    color: #F00;
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.input_signin {
+    position: relative;
+    border-top-style: solid; 
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: auto;
+    width: 300px;
+    white-space: pre;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.logo {
+    position: relative;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.home_icon {
+    position: relative;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.meme {
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+    width: 800px;
+    background-color: #000;
+}
+.center_inputs_signin_div {
+    width:300px;
+    margin:auto;
+}
+
+.center_submit_signin_div {
+    width:30px;
+    margin:auto;
+}
+
+.likenoactive {
+    background-color: #666;
+    background-image: url('like_noactive.png');
+    border-style:none;
+    width: 50px;
+    height: 50px;
+}
+.likeactive {
+    background-color: #666;
+    background-image: url('like_active.png');
+    border-style:none;
+    width: 50px;
+    height: 50px;
+}
+.dislikenoactive {
+    background-color: #666;
+    background-image: url('dislike_noactive.png');
+    border-style:none;
+    width: 50px;
+    height: 50px;
+}
+.dislikeactive {
+    background-color: #666;
+    background-image: url('dislike_active.png');
+    border-style:none;
+    width: 50px;
+    height: 50px;
+}
+.textarea {
+    position: relative;
+
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: auto;
+    width: auto;
+    white-space: pre;
+    color: #000;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.comment {
+    position: relative;
+
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    height: 50px;
+    width: auto;
+    white-space: pre;
+    color: #000;
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #FFF;
+    border: thin dotted #900;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    text-align: left;
+}
+.photo_small {
+    position: relative;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #CCC;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
+.body {
+
+    background: url("background.png") #666  no-repeat fixed;
+    background-position-x: 100%;
+
+}

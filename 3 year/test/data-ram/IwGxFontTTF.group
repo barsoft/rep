@@ -1,0 +1,20 @@
+CIwResGroup
+{
+	name FontTTF
+
+	CIwGxFont
+	{
+		name "Serif_6"
+
+		ttf "font.ttf"
+		ttfPointSize 6
+	}
+
+	CIwGxFont
+	{
+		name "Serif_10"
+
+		ttf "font.ttf"
+		ttfPointSize 10
+	}
+}
