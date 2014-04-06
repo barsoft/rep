@@ -17,7 +17,8 @@ import java.util.logging.Logger;
 
 import com.barsoft.java_labs2.core.forms.CustomTable;
 import com.barsoft.java_labs2.lab7.entities.User;
-import com.barsoft.java_labs2.lab7.server.database_connectors.Lab2Connector;
+
+import com.barsoft.java_labs2.lab7.server.database_connectors.DatabaseConnector;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
@@ -44,9 +45,9 @@ public class DatabaseJPanel extends JPanel {
 	 */
 	private ArrayList<CustomTable> tables = new ArrayList<>();
 	private CustomTable jTableBankClients = new CustomTable();
-	private Lab2Connector db;
+	private DatabaseConnector db;
 
-	public DatabaseJPanel(final Lab2Connector db) throws SQLException {
+	public DatabaseJPanel(final DatabaseConnector db) throws SQLException {
 		initComponents();
 		this.db = db;
 
@@ -244,7 +245,8 @@ public class DatabaseJPanel extends JPanel {
 
 	public void updateTables() throws SQLException {
 		final TableModel modelBankClients = new CustomTableModel(
-				getMatrixFromList(db.getUsers()), getColumnsList(User.class));
+				getMatrixFromList(db.getRegisteredtUsers()),
+				getColumnsList(User.class));
 		jTableBankClients.setModel(modelBankClients);
 
 		for (final JTable jTable : tables) {
@@ -281,7 +283,7 @@ public class DatabaseJPanel extends JPanel {
 		switch (jTabbedPane.getSelectedIndex()) {
 		case 0: {
 			final TableModel modelBankClients = new CustomTableModel(
-					getMatrixFromList(db.getUsers()),
+					getMatrixFromList(db.getRegisteredtUsers()),
 					getColumnsList(User.class));
 			jTableBankClients.setModel(modelBankClients);
 			break;
@@ -335,7 +337,7 @@ public class DatabaseJPanel extends JPanel {
 		int index = tables.get(tableIndex).getSelectedRow();
 		switch (tableIndex) {
 		case 0:
-			return db.getUsers().get(index);
+			return db.getRegisteredtUsers().get(index);
 		}
 		return null;
 	}
@@ -454,7 +456,7 @@ public class DatabaseJPanel extends JPanel {
 				Object value, boolean isSelected, int row, int column) {
 			try {
 				this.comboBoxBankClients = new DefaultCellEditor(new JComboBox(
-						db.getUsers().toArray()));
+						db.getRegisteredtUsers().toArray()));
 			} catch (SQLException ex) {
 				exception(ex);
 				return null;
@@ -483,7 +485,7 @@ public class DatabaseJPanel extends JPanel {
 	}
 
 	private void exception(Exception ex) {
-		TCPServer.logServer(ex.getLocalizedMessage());
+		TCPServer.getInstance().logServer(ex.getLocalizedMessage());
 		ex.printStackTrace();
 	}
 
@@ -542,7 +544,7 @@ public class DatabaseJPanel extends JPanel {
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTabbedPane jTabbedPane;
 
-	public Lab2Connector getDb() {
+	public DatabaseConnector getDb() {
 		return db;
 	}
 

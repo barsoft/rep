@@ -6,6 +6,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.WindowEvent;
@@ -24,6 +25,13 @@ import javax.swing.border.EmptyBorder;
 
 import com.barsoft.java_labs2.Main;
 import com.barsoft.java_labs2.core.forms.ImagePanel;
+import com.barsoft.java_labs2.lab7.client.net.NetworkGamePanel;
+import com.barsoft.java_labs2.lab7.client.net.RoomPanel;
+import com.barsoft.java_labs2.lab7.client.net.RoomsListPanel;
+import com.barsoft.java_labs2.lab7.client.net.TCPClient;
+import com.barsoft.java_labs2.lab7.client.net.ClientManager.OnGameStartedListener;
+import com.barsoft.java_labs2.lab7.client.net.ClientManager.OnLoggedInListener;
+import com.barsoft.java_labs2.lab7.entities.Game;
 import com.barsoft.java_labs2.lab7.entities.User;
 
 import javax.swing.BoxLayout;
@@ -33,15 +41,27 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.CardLayout;
 
+import javax.swing.JList;
+
+import java.awt.Font;
+
 public class CheckersFrame extends JFrame {
 	protected JMenu mnFile;
 
 	private JTextField loginField;
 	private JTextField passwordField;
-	private JMenuItem mntmNewMenuItem;
-	private CheckersPanel checkersPanel;
 	private ImagePanel contentPane;
 	private GridBagLayout gbl_contentPane;
+	private JMenuBar menuBarNonAuthorised;
+	private JMenuItem jMenuItemLogin;
+	private JMenuItem jMenuItemLogout;
+	private RoomsListPanel roomsListPanel;
+	private RoomPanel roomPanel;
+	private NetworkGamePanel gamePanel;
+
+	private String quickPass;
+
+	private String quickLogin;
 
 	/**
 	 * Create the frame.
@@ -50,15 +70,23 @@ public class CheckersFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 891, 556);
 
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
+		contentPane = new ImagePanel(Main.class.getResource("background.jpg"));
+		contentPane.setPreferredSize(new Dimension(500, 500));
+		contentPane.setBackground(new Color(0, 102, 0));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
 
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+
+		contentPane.setLayout(gbl_contentPane);
+
+		menuBarNonAuthorised = new JMenuBar();
 		mnFile = new JMenu("File");
-		menuBar.add(mnFile);
+		menuBarNonAuthorised.add(mnFile);
 
-		JMenuItem jMenuItemClose = new JMenuItem();
-		jMenuItemClose.setText("Login");
-		jMenuItemClose.addActionListener(new java.awt.event.ActionListener() {
+		jMenuItemLogin = new JMenuItem();
+		jMenuItemLogin.setText("Login");
+		jMenuItemLogin.addActionListener(new java.awt.event.ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,58 +94,28 @@ public class CheckersFrame extends JFrame {
 			}
 
 		});
-		mnFile.add(jMenuItemClose);
+		mnFile.add(jMenuItemLogin);
 
-		contentPane = new ImagePanel(Main.class.getResource(
-				"/com/barsoft/java_labs/background.jpg").getPath());
-		contentPane.setPreferredSize(new Dimension(500, 500));
-		contentPane.setBackground(new Color(0, 102, 0));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[] { 400 };
-		gbl_contentPane.rowHeights = new int[] { 400 };
-		gbl_contentPane.columnWeights = new double[] { 0.0 };
-		gbl_contentPane.rowWeights = new double[] { 0.0 };
-		contentPane.setLayout(gbl_contentPane);
-
-		checkersPanel = new CheckersPanel();
-		GridBagConstraints gbc_checkersPanel = new GridBagConstraints();
-		gbc_checkersPanel.fill = GridBagConstraints.BOTH;
-		gbc_checkersPanel.gridx = 0;
-		gbc_checkersPanel.gridy = 0;
-		contentPane.add(checkersPanel, gbc_checkersPanel);
-
-		addComponentListener(new ComponentListener() {
+		jMenuItemLogout = new JMenuItem();
+		jMenuItemLogout.setText("Logout");
+		jMenuItemLogout.addActionListener(new java.awt.event.ActionListener() {
 
 			@Override
-			public void componentShown(ComponentEvent arg0) {
-				// TODO Auto-generated method stub
+			public void actionPerformed(ActionEvent arg0) {
+				TCPClient
+						.getInstance()
+						.getRequestBuilder()
+						.logoutUser(
+								TCPClient.getInstance().getUser().getLogin());
+				clearAll();
 
+				showLoginWindow();
 			}
 
-			@Override
-			public void componentResized(ComponentEvent arg0) {
-				int width = (int) (arg0.getComponent().getHeight() * 0.7);
-				gbl_contentPane.columnWidths = new int[] { width };
-				int height = (int) (arg0.getComponent().getHeight() * 0.7);
-				gbl_contentPane.rowHeights = new int[] { height };
-			}
-
-			@Override
-			public void componentMoved(ComponentEvent arg0) {
-				int width = (int) (arg0.getComponent().getHeight() * 0.7);
-				gbl_contentPane.columnWidths = new int[] { width };
-				int height = (int) (arg0.getComponent().getHeight() * 0.7);
-				gbl_contentPane.rowHeights = new int[] { height };
-			}
-
-			@Override
-			public void componentHidden(ComponentEvent arg0) {
-				// TODO Auto-generated method stub
-
-			}
 		});
+		mnFile.add(jMenuItemLogout);
+
+		setJMenuBar(menuBarNonAuthorised);
 
 		this.addWindowListener(new WindowListener() {
 
@@ -162,9 +160,18 @@ public class CheckersFrame extends JFrame {
 
 			}
 		});
+
 	}
 
 	private void showLoginWindow() {
+
+		if (jMenuItemLogout != null)
+			jMenuItemLogout.setVisible(false);
+		if (jMenuItemLogin != null)
+			jMenuItemLogin.setVisible(true);
+
+		TCPClient.getInstance().setUser(null);
+
 		JPanel myPanel;
 		myPanel = new JPanel();
 		GridBagLayout gbl_myPanel = new GridBagLayout();
@@ -184,6 +191,7 @@ public class CheckersFrame extends JFrame {
 		myPanel.add(label_1, gbc);
 
 		loginField = new JTextField(5);
+		loginField.setText(getQuickLogin());
 		GridBagConstraints gbc_xField = new GridBagConstraints();
 		gbc_xField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_xField.anchor = GridBagConstraints.NORTH;
@@ -199,6 +207,7 @@ public class CheckersFrame extends JFrame {
 		JLabel label = new JLabel("Password:");
 		myPanel.add(label, gbc_1);
 		passwordField = new JTextField(5);
+		passwordField.setText(getQuickPass());
 		GridBagConstraints gbc_yField = new GridBagConstraints();
 		gbc_yField.insets = new Insets(5, 5, 5, 0);
 		gbc_yField.fill = GridBagConstraints.HORIZONTAL;
@@ -212,17 +221,170 @@ public class CheckersFrame extends JFrame {
 
 		if (result == JOptionPane.OK_OPTION) {
 
-			try {
-				User user = DatabaseService.getInstance().loginUser(
-						loginField.getText(), passwordField.getText());
-				if (user != null) {
+			TCPClient.getInstance().getRequestBuilder()
+					.loginUser(loginField.getText(), passwordField.getText());
 
-				} else {
-					throw new SQLException("Wrong input data!");
-				}
-			} catch (SQLException e) {
-				show();
-			}
+			TCPClient.getInstance().getClientManager()
+					.addOnLoggedInListener(new OnLoggedInListener() {
+
+						@Override
+						public void loggedIn(User user) {
+							if (user != null) {
+								if (jMenuItemLogout != null)
+									jMenuItemLogout.setVisible(true);
+								if (jMenuItemLogin != null)
+									jMenuItemLogin.setVisible(false);
+
+								TCPClient.getInstance().setUser(user);
+								showRoomsListPanel();
+							}
+
+						}
+					});
 		}
+
+		TCPClient.getInstance().getClientManager()
+				.addOnGameStartedListener(new OnGameStartedListener() {
+
+					@Override
+					public void started(Game game) {
+						TCPClient.getInstance().getCheckersFrame()
+								.showGamePanel(game);
+					}
+				});
+	}
+
+	public void showRoomsListPanel() {
+		clearAll();
+		roomsListPanel = new RoomsListPanel();
+		roomsListPanel.getBtnGo().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				TCPClient
+						.getInstance()
+						.getRequestBuilder()
+						.connectToRoom(
+								roomsListPanel.getSelectedRoom().getId(),
+								TCPClient.getInstance().getUser().getId());
+				showRoomPanel(roomsListPanel.getSelectedRoom().getId());
+			}
+		});
+
+		roomsListPanel.setPreferredSize(new Dimension(500, 250));
+
+		contentPane.add(roomsListPanel);
+		this.revalidate();
+		this.repaint();
+	}
+
+	public void showRoomPanel(long roomID) {
+		clearAll();
+		roomPanel = new RoomPanel(roomID);
+		roomPanel.getBtnLeaveRoom().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				TCPClient
+						.getInstance()
+						.getRequestBuilder()
+						.disconnectFromRoom(
+								roomsListPanel.getSelectedRoom().getId(),
+								TCPClient.getInstance().getUser().getId());
+				showRoomsListPanel();
+			}
+		});
+		roomPanel.setPreferredSize(new Dimension(500, 250));
+		contentPane.add(roomPanel);
+		this.revalidate();
+		this.repaint();
+	}
+
+	public void showGamePanel(Game game) {
+		clearAll();
+		gamePanel = new NetworkGamePanel(game);
+
+		GridBagConstraints gridBagConstraints = new GridBagConstraints();
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 0;
+		contentPane.add(gamePanel, gridBagConstraints);
+
+		if (game.getPlayer1().getUser().getId() == TCPClient.getInstance()
+				.getUser().getId()) {
+			System.out.println(game.getPlayer1().getUser() + " "
+					+ TCPClient.getInstance().getUser());
+
+			PlayerPanel playerPanel1 = new PlayerPanel();
+			playerPanel1.setPlayer(game.getPlayer1());
+			playerPanel1.setGame(game);
+			playerPanel1.setPreferredSize(new Dimension(150, 200));
+			gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.gridx = 0;
+			gridBagConstraints.gridy = 0;
+			contentPane.add(playerPanel1, gridBagConstraints);
+
+			PlayerPanel playerPanel2 = new PlayerPanel();
+			playerPanel2.setPlayer(game.getPlayer2());
+			playerPanel2.setGame(game);
+			playerPanel2.setPreferredSize(new Dimension(150, 200));
+			gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.gridx = 2;
+			gridBagConstraints.gridy = 0;
+			contentPane.add(playerPanel2, gridBagConstraints);
+		} else {
+			PlayerPanel playerPanel1 = new PlayerPanel();
+			playerPanel1.setPlayer(game.getPlayer2());
+			playerPanel1.setGame(game);
+			playerPanel1.setPreferredSize(new Dimension(150, 200));
+			gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.gridx = 0;
+			gridBagConstraints.gridy = 0;
+			contentPane.add(playerPanel1, gridBagConstraints);
+
+			PlayerPanel playerPanel2 = new PlayerPanel();
+			playerPanel2.setPlayer(game.getPlayer1());
+			playerPanel2.setGame(game);
+			playerPanel2.setPreferredSize(new Dimension(150, 200));
+			gridBagConstraints = new GridBagConstraints();
+			gridBagConstraints.gridx = 2;
+			gridBagConstraints.gridy = 0;
+			contentPane.add(playerPanel2, gridBagConstraints);
+		}
+
+		this.revalidate();
+		this.repaint();
+	}
+
+	private void clearAll() {
+		if (roomPanel != null) {
+			roomPanel.stop();
+			contentPane.remove(roomPanel);
+		}
+		if (roomsListPanel != null) {
+			roomsListPanel.stop();
+			contentPane.remove(roomsListPanel);
+		}
+		if (gamePanel != null) {
+			gamePanel.stop();
+			contentPane.remove(gamePanel);
+		}
+		this.revalidate();
+		this.repaint();
+	}
+
+	public String getQuickPass() {
+		return quickPass;
+	}
+
+	public void setQuickPass(String quickPass) {
+		this.quickPass = quickPass;
+	}
+
+	public String getQuickLogin() {
+		return quickLogin;
+	}
+
+	public void setQuickLogin(String quickLogin) {
+		this.quickLogin = quickLogin;
 	}
 }

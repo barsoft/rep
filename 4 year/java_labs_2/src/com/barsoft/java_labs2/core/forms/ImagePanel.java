@@ -3,6 +3,8 @@ package com.barsoft.java_labs2.core.forms;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URI;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -13,6 +15,10 @@ public class ImagePanel extends JPanel {
 
 	public ImagePanel(String img) {
 		this(new ImageIcon(img).getImage());
+	}
+
+	public ImagePanel(URL url) {
+		this(new ImageIcon(url).getImage());
 	}
 
 	public ImagePanel(Image img) {
