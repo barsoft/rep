@@ -19,7 +19,7 @@ public class TCPServer {
 	public static void main(String[] args) throws IOException {
 		getInstance().checkersServerFrame = new CheckersServerFrame();
 		getInstance().checkersServerFrame.setVisible(true);
-		getInstance().serverManager = new ServerManager(new ServerSocket(6789));
+		getInstance().serverManager = new ServerManager(new ServerSocket(4444));
 		getInstance().logServer("Listening socket!..");
 	}
 

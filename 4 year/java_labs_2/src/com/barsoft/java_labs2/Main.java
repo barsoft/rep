@@ -243,12 +243,6 @@ public class Main extends JFrame {
 				.setIcon(new ImageIcon(Main.class.getResource("server.jpg")));
 		panel_2.add(buttonServer, BorderLayout.NORTH);
 		
-		 try {
-			System.out.println("Your Host addr: " + InetAddress.getLocalHost().getHostAddress());
-		} catch (UnknownHostException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} 
 	}
 
 }

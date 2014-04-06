@@ -127,7 +127,6 @@ public class SingleGamePanel extends JPanel implements Runnable {
 			if (clickedCellIsAvailable) {
 				boolean kicked = gameManager.moveChecker(pickedCell.x,
 						pickedCell.y, x, y);
-				gameManager.getGame().getGameState().print();
 				if (!kicked) {
 					switchTurn();
 				} else {

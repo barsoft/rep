@@ -44,7 +44,6 @@ public class RequestBuilder {
 
 	public void switchTurn(long gameID, GameState gameState) {
 		request("SWITCH_TURN " + gameID);
-		gameState.print();
 		request(xStream.toXML(gameState));
 	}
 

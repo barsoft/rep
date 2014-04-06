@@ -25,7 +25,13 @@ public class TCPClient {
 
 			public void run() {
 				try {
-					getInstance().socket = new Socket(argv[0], 6789);
+					String ip;
+					if (argv == null || argv.length == 0 || argv[0] == null)
+						ip = "";
+					else {
+						ip = argv[0];
+					}
+					getInstance().socket = new Socket(ip, 4444);
 					getInstance().clientManager = new ClientManager(
 							getInstance().socket);
 					getInstance().requestBuilder = new RequestBuilder(

@@ -1,8 +1,10 @@
 package com.barsoft.java_labs2.lab7.server;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,6 +28,15 @@ public class ServerManager implements Runnable {
 
 	public ServerManager(ServerSocket serverSocket) {
 		this.serverSocket = serverSocket;
+		
+		 try {
+	           InetAddress i = InetAddress.getLocalHost();
+	           System.out.println(i);                  // host name and IP address
+	           System.out.println(i.getHostName());    // name
+	           System.out.println(i.getHostAddress()); // IP address only
+	       }
+	       catch(Exception e){e.printStackTrace();}
+		
 		Room r = new Room();
 		// r.setName("funny_room");
 		rooms.add(r);
